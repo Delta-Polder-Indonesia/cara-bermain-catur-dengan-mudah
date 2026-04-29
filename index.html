@@ -36,322 +36,1062 @@
         </header>
         <main class="p-8">
 
+<!-- ================================================================================================================================================== -->
 <!-- Section 1 -->
+<!-- ================================================================================================================================================== -->
 <div class="section-block">
     <div class="flex items-center gap-4 mb-4">
         <span class="section-number text-3xl">1</span>
         <h3 class="text-2xl font-extrabold text-chess-green uppercase leading-tight">♙ PION (Pawn)</h3>
     </div>
     <p class="text-gray-600 mb-6 leading-snug">Pion adalah bidak paling dasar dalam catur, tetapi punya peran sangat penting dalam permainan. Meski gerakannya terlihat sederhana, pion sangat kuat untuk mengontrol ruang, membuka jalan serangan, dan mendukung bidak lain. Pion bergerak maju lurus, namun menangkap lawan secara diagonal, sehingga pemain harus memahami perbedaan gerak dan makannya dengan benar.</p>
+
+    <!-- ============================================ -->
+    <!-- GERAKAN DASAR PION                          -->
+    <!-- ============================================ -->
     <div class="content-row">
         <div class="board-panel relative" style="float: right; margin-left: 1.5rem; margin-bottom: 1rem;">
-            <svg viewBox="0 0 200 200" class="w-full h-full">
+            <svg viewBox="0 0 200 220" class="w-full h-full">
+                <!-- Papan 8×8 -->
                 <rect width="200" height="200" fill="#769656"/>
-                <g fill="#eeeed2"><rect width="25" height="25" x="0" y="0"/><rect width="25" height="25" x="50" y="0"/><rect width="25" height="25" x="100" y="0"/><rect width="25" height="25" x="150" y="0"/><rect width="25" height="25" x="25" y="25"/><rect width="25" height="25" x="75" y="25"/><rect width="25" height="25" x="125" y="25"/><rect width="25" height="25" x="175" y="25"/><rect width="25" height="25" x="0" y="50"/><rect width="25" height="25" x="50" y="50"/><rect width="25" height="25" x="100" y="50"/><rect width="25" height="25" x="150" y="50"/><rect width="25" height="25" x="25" y="75"/><rect width="25" height="25" x="75" y="75"/><rect width="25" height="25" x="125" y="75"/><rect width="25" height="25" x="175" y="75"/><rect width="25" height="25" x="0" y="100"/><rect width="25" height="25" x="50" y="100"/><rect width="25" height="25" x="100" y="100"/><rect width="25" height="25" x="150" y="100"/><rect width="25" height="25" x="25" y="125"/><rect width="25" height="25" x="75" y="125"/><rect width="25" height="25" x="125" y="125"/><rect width="25" height="25" x="175" y="125"/><rect width="25" height="25" x="0" y="150"/><rect width="25" height="25" x="50" y="150"/><rect width="25" height="25" x="100" y="150"/><rect width="25" height="25" x="150" y="150"/><rect width="25" height="25" x="25" y="175"/><rect width="25" height="25" x="75" y="175"/><rect width="25" height="25" x="125" y="175"/><rect width="25" height="25" x="175" y="175"/></g>
-                <!-- Highlight: gerakan maju 1 & 2 kotak -->
-                <rect x="75" y="125" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
-                <rect x="75" y="100" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
+                <g fill="#eeeed2">
+                    <rect x="0"   y="0"   width="25" height="25"/><rect x="50"  y="0"   width="25" height="25"/>
+                    <rect x="100" y="0"   width="25" height="25"/><rect x="150" y="0"   width="25" height="25"/>
+                    <rect x="25"  y="25"  width="25" height="25"/><rect x="75"  y="25"  width="25" height="25"/>
+                    <rect x="125" y="25"  width="25" height="25"/><rect x="175" y="25"  width="25" height="25"/>
+                    <rect x="0"   y="50"  width="25" height="25"/><rect x="50"  y="50"  width="25" height="25"/>
+                    <rect x="100" y="50"  width="25" height="25"/><rect x="150" y="50"  width="25" height="25"/>
+                    <rect x="25"  y="75"  width="25" height="25"/><rect x="75"  y="75"  width="25" height="25"/>
+                    <rect x="125" y="75"  width="25" height="25"/><rect x="175" y="75"  width="25" height="25"/>
+                    <rect x="0"   y="100" width="25" height="25"/><rect x="50"  y="100" width="25" height="25"/>
+                    <rect x="100" y="100" width="25" height="25"/><rect x="150" y="100" width="25" height="25"/>
+                    <rect x="25"  y="125" width="25" height="25"/><rect x="75"  y="125" width="25" height="25"/>
+                    <rect x="125" y="125" width="25" height="25"/><rect x="175" y="125" width="25" height="25"/>
+                    <rect x="0"   y="150" width="25" height="25"/><rect x="50"  y="150" width="25" height="25"/>
+                    <rect x="100" y="150" width="25" height="25"/><rect x="150" y="150" width="25" height="25"/>
+                    <rect x="25"  y="175" width="25" height="25"/><rect x="75"  y="175" width="25" height="25"/>
+                    <rect x="125" y="175" width="25" height="25"/><rect x="175" y="175" width="25" height="25"/>
+                </g>
+
+                <!-- Highlight: maju 1 kotak (e5) dan maju 2 kotak (e6) -->
+                <rect x="100" y="100" width="25" height="25" fill="#facc15" fill-opacity="0.55"/>
+                <rect x="100" y="75"  width="25" height="25" fill="#facc15" fill-opacity="0.40"/>
                 <!-- Highlight: makan diagonal -->
-                <rect x="50" y="125" width="25" height="25" fill="#ef4444" fill-opacity="0.35"/>
-                <rect x="100" y="125" width="25" height="25" fill="#ef4444" fill-opacity="0.35"/>
-                <!-- Tanda diagonal capture -->
-                <circle cx="62.5" cy="137.5" r="5" fill="#ef4444" fill-opacity="0.6"/>
-                <circle cx="112.5" cy="137.5" r="5" fill="#ef4444" fill-opacity="0.6"/>
-                <!-- Tanda maju -->
-                <circle cx="87.5" cy="137.5" r="5" fill="#facc15" fill-opacity="0.7"/>
-                <circle cx="87.5" cy="112.5" r="5" fill="#facc15" fill-opacity="0.7"/>
-                <!-- Pion putih -->
-                <text x="87.5" y="162.5" font-size="20" fill="white" text-anchor="middle" dominant-baseline="central">♙</text>
+                <rect x="75"  y="100" width="25" height="25" fill="#ef4444" fill-opacity="0.35"/>
+                <rect x="125" y="100" width="25" height="25" fill="#ef4444" fill-opacity="0.35"/>
+
+                <!-- Titik arah maju -->
+                <circle cx="112.5" cy="112.5" r="5" fill="#facc15" fill-opacity="0.80"/>
+                <circle cx="112.5" cy="87.5"  r="5" fill="#facc15" fill-opacity="0.60"/>
+                <!-- Titik makan diagonal -->
+                <circle cx="87.5"  cy="112.5" r="5" fill="#ef4444" fill-opacity="0.70"/>
+                <circle cx="137.5" cy="112.5" r="5" fill="#ef4444" fill-opacity="0.70"/>
+
+                <!-- Pion putih di e4 (y=125) -->
+                <text x="112.5" y="137.5" font-size="20" fill="white"
+                      text-anchor="middle" dominant-baseline="central">♙</text>
+
                 <!-- Label -->
-                <text x="100" y="12" font-size="7" fill="white" text-anchor="middle" font-weight="bold" opacity="0.9">GERAKAN PION</text>
+                <text x="100" y="10" font-size="7" fill="white"
+                      text-anchor="middle" font-weight="bold" opacity="0.90">GERAKAN PION</text>
+
+                <!-- Koordinat kolom -->
+                <text x="112.5" y="209" font-size="5.5" fill="#374151"
+                      text-anchor="middle" font-weight="bold">e</text>
+                <text x="87.5"  y="209" font-size="5.5" fill="#374151"
+                      text-anchor="middle" font-weight="bold">d</text>
+                <text x="137.5" y="209" font-size="5.5" fill="#374151"
+                      text-anchor="middle" font-weight="bold">f</text>
+                <text x="100" y="219" font-size="7.5" fill="#374151"
+                      text-anchor="middle" font-weight="bold">♙ GERAKAN DASAR PION</text>
             </svg>
-            <!-- Legenda kecil -->
-            <div style="display:flex; gap:8px; margin-top:6px; justify-content:center; flex-wrap:wrap;">
-                <span style="display:flex;align-items:center;gap:3px;font-size:9px;color:#555;">
-                    <span style="width:8px;height:8px;background:#facc15;border-radius:50%;display:inline-block;"></span> Gerak maju
+
+            <div style="display:flex;gap:8px;margin-top:4px;justify-content:center;flex-wrap:wrap;">
+                <span style="display:flex;align-items:center;gap:3px;font-size:7.5px;color:#555;">
+                    <span style="width:8px;height:8px;background:#facc15;border-radius:50%;display:inline-block;opacity:.8"></span>
+                    Gerak maju (1 atau 2 kotak)
                 </span>
-                <span style="display:flex;align-items:center;gap:3px;font-size:9px;color:#555;">
-                    <span style="width:8px;height:8px;background:#ef4444;border-radius:50%;display:inline-block;"></span> Makan diagonal
+                <span style="display:flex;align-items:center;gap:3px;font-size:7.5px;color:#555;">
+                    <span style="width:8px;height:8px;background:#ef4444;border-radius:50%;display:inline-block;opacity:.8"></span>
+                    Makan diagonal
                 </span>
             </div>
         </div>
+
         <div class="text-content">
-            <h3 class="text-xl font-extrabold text-chess-green uppercase mb-3 leading-tight">Nilai: 1 poin</h3>
-            <p class="text-gray-600 leading-relaxed text-sm"><strong>Pion adalah bidak dengan nilai 1 poin</strong> dan menjadi bidak paling banyak digunakan dalam permainan catur. Meski nilainya kecil, pion memiliki peran besar dalam mengontrol ruang, membentuk pertahanan, membuka jalur serangan, dan mendukung pergerakan bidak lain. Karena itu, memahami gerakan pion adalah dasar penting dalam belajar cara bermain catur. <br><br>Secara umum, pion bergerak maju 1 kotak ke depan. Namun pada langkah pertamanya, pion memiliki hak khusus untuk maju 2 kotak sekaligus, selama tidak ada bidak yang menghalangi jalurnya. Setelah langkah pertama tersebut, pion hanya boleh bergerak 1 kotak setiap giliran. <br><br>Aturan makan pion berbeda dari gerak majunya. Pion tidak dapat menangkap bidak lawan secara lurus ke depan, melainkan hanya bisa makan secara diagonal, yaitu 1 kotak serong ke depan ke arah kiri atau kanan. Perbedaan antara gerakan dan cara makan ini membuat pion terlihat sederhana, tetapi sebenarnya sangat penting dalam strategi catur.</p>
+            <h3 class="text-xl font-extrabold text-chess-green uppercase mb-3 leading-tight">Nilai: 1 Poin</h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+                Pion adalah bidak dengan nilai 1 poin dan merupakan bidak yang paling banyak hadir di papan sejak awal permainan. Meski nilainya kecil, pion memiliki peran yang jauh lebih besar dari angka itu mencerminkan: ia mengontrol ruang, membentuk struktur pertahanan, membuka jalur serangan bagi bidak lain, dan dalam kondisi tertentu mampu mengubah jalannya pertandingan sepenuhnya.
+                <br><br>
+                Pion bergerak maju satu kotak setiap giliran. Pada langkah pertamanya saja, ia diberi hak istimewa untuk maju dua kotak sekaligus, selama tidak ada bidak yang menghalangi jalurnya. Setelah langkah pertama itu digunakan, hak tersebut gugur dan pion hanya boleh melangkah satu kotak per giliran untuk seterusnya.
+                <br><br>
+                Cara makan pion berbeda dari cara geraknya, dan inilah yang sering membingungkan pemain baru. Pion tidak bisa menangkap bidak lawan yang berada tepat di depannya. Ia hanya bisa makan secara diagonal — satu kotak serong ke depan, ke kiri atau ke kanan. Karena itu, pion yang berhadapan langsung dengan pion lawan di kolom yang sama akan saling memblok tanpa bisa saling memakan, kecuali salah satu menyerang dari sisi yang berbeda.
+            </p>
         </div>
     </div>
 
     <!-- ============================================ -->
-    <!-- SUB-SECTION: EN PASSANT -->
+    <!-- SUB-SECTION: EN PASSANT                     -->
     <!-- ============================================ -->
     <div class="content-row" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px dashed #e5e7eb;">
         <div class="board-panel relative" style="float: left; margin-right: 1.5rem; margin-bottom: 1rem;">
-            <svg viewBox="0 0 200 240" class="w-full h-full">
+            <svg viewBox="0 0 200 220" class="w-full h-full">
+                <!-- Papan 8×8 -->
                 <rect width="200" height="200" fill="#769656"/>
-                <g fill="#eeeed2"><rect width="25" height="25" x="0" y="0"/><rect width="25" height="25" x="50" y="0"/><rect width="25" height="25" x="100" y="0"/><rect width="25" height="25" x="150" y="0"/><rect width="25" height="25" x="25" y="25"/><rect width="25" height="25" x="75" y="25"/><rect width="25" height="25" x="125" y="25"/><rect width="25" height="25" x="175" y="25"/><rect width="25" height="25" x="0" y="50"/><rect width="25" height="25" x="50" y="50"/><rect width="25" height="25" x="100" y="50"/><rect width="25" height="25" x="150" y="50"/><rect width="25" height="25" x="25" y="75"/><rect width="25" height="25" x="75" y="75"/><rect width="25" height="25" x="125" y="75"/><rect width="25" height="25" x="175" y="75"/><rect width="25" height="25" x="0" y="100"/><rect width="25" height="25" x="50" y="100"/><rect width="25" height="25" x="100" y="100"/><rect width="25" height="25" x="150" y="100"/><rect width="25" height="25" x="25" y="125"/><rect width="25" height="25" x="75" y="125"/><rect width="25" height="25" x="125" y="125"/><rect width="25" height="25" x="175" y="125"/><rect width="25" height="25" x="0" y="150"/><rect width="25" height="25" x="50" y="150"/><rect width="25" height="25" x="100" y="150"/><rect width="25" height="25" x="150" y="150"/><rect width="25" height="25" x="25" y="175"/><rect width="25" height="25" x="75" y="175"/><rect width="25" height="25" x="125" y="175"/><rect width="25" height="25" x="175" y="175"/></g>
+                <g fill="#eeeed2">
+                    <rect x="0"   y="0"   width="25" height="25"/><rect x="50"  y="0"   width="25" height="25"/>
+                    <rect x="100" y="0"   width="25" height="25"/><rect x="150" y="0"   width="25" height="25"/>
+                    <rect x="25"  y="25"  width="25" height="25"/><rect x="75"  y="25"  width="25" height="25"/>
+                    <rect x="125" y="25"  width="25" height="25"/><rect x="175" y="25"  width="25" height="25"/>
+                    <rect x="0"   y="50"  width="25" height="25"/><rect x="50"  y="50"  width="25" height="25"/>
+                    <rect x="100" y="50"  width="25" height="25"/><rect x="150" y="50"  width="25" height="25"/>
+                    <rect x="25"  y="75"  width="25" height="25"/><rect x="75"  y="75"  width="25" height="25"/>
+                    <rect x="125" y="75"  width="25" height="25"/><rect x="175" y="75"  width="25" height="25"/>
+                    <rect x="0"   y="100" width="25" height="25"/><rect x="50"  y="100" width="25" height="25"/>
+                    <rect x="100" y="100" width="25" height="25"/><rect x="150" y="100" width="25" height="25"/>
+                    <rect x="25"  y="125" width="25" height="25"/><rect x="75"  y="125" width="25" height="25"/>
+                    <rect x="125" y="125" width="25" height="25"/><rect x="175" y="125" width="25" height="25"/>
+                    <rect x="0"   y="150" width="25" height="25"/><rect x="50"  y="150" width="25" height="25"/>
+                    <rect x="100" y="150" width="25" height="25"/><rect x="150" y="150" width="25" height="25"/>
+                    <rect x="25"  y="175" width="25" height="25"/><rect x="75"  y="175" width="25" height="25"/>
+                    <rect x="125" y="175" width="25" height="25"/><rect x="175" y="175" width="25" height="25"/>
+                </g>
 
-                <!-- STEP 1: Pion hitam posisi awal (baris 2 = y25) -->
-                <!-- Panah: pion hitam maju 2 kotak dari d7(y25) ke d5(y75) -->
                 <defs>
-                    <marker id="arrow-black" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-                        <path d="M0,0 L6,3 L0,6 Z" fill="#374151"/>
-                    </marker>
-                    <marker id="arrow-green" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-                        <path d="M0,0 L6,3 L0,6 Z" fill="#16a34a"/>
-                    </marker>
-                    <marker id="arrow-red" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-                        <path d="M0,0 L6,3 L0,6 Z" fill="#ef4444"/>
-                    </marker>
+                    <marker id="arr-ep-blk" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                        <path d="M0,0 L6,3 L0,6 Z" fill="#374151"/></marker>
+                    <marker id="arr-ep-grn" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                        <path d="M0,0 L6,3 L0,6 Z" fill="#16a34a"/></marker>
                 </defs>
 
-                <!-- Highlight: jalur pion hitam maju 2 langkah -->
-                <rect x="75" y="25" width="25" height="25" fill="#94a3b8" fill-opacity="0.3"/>
-                <rect x="75" y="50" width="25" height="25" fill="#94a3b8" fill-opacity="0.3"/>
-                <rect x="75" y="75" width="25" height="25" fill="#94a3b8" fill-opacity="0.4"/>
+                <!--
+                    EN PASSANT:
+                    Pion hitam d7 (87.5,37.5) maju 2 kotak ke d5 (87.5,87.5)
+                    Pion putih e5 (112.5,87.5) bisa en passant ke d6 (87.5,62.5)
+                    Pion hitam d5 diambil dari papan.
+                -->
 
-                <!-- Panah pion hitam maju 2 kotak -->
-                <line x1="87.5" y1="37" x2="87.5" y2="83" stroke="#374151" stroke-width="1.8" stroke-dasharray="3,2" marker-end="url(#arrow-black)"/>
+                <!-- Highlight jalur pion hitam d7→d5 -->
+                <rect x="75" y="25"  width="25" height="25" fill="#94a3b8" fill-opacity="0.25"/>
+                <rect x="75" y="50"  width="25" height="25" fill="#94a3b8" fill-opacity="0.15"/>
+                <rect x="75" y="75"  width="25" height="25" fill="#94a3b8" fill-opacity="0.30"/>
 
-                <!-- Pion hitam di d7 (posisi awal, transparan = sudah pindah) -->
-                <text x="87.5" y="37.5" font-size="18" fill="black" text-anchor="middle" dominant-baseline="central" opacity="0.3">♟</text>
-                <!-- Pion hitam di d5 (posisi setelah maju 2) -->
-                <text x="87.5" y="87.5" font-size="20" fill="black" text-anchor="middle" dominant-baseline="central">♟</text>
+                <!-- Highlight kotak tujuan en passant d6 -->
+                <rect x="75" y="50"  width="25" height="25" fill="#22c55e" fill-opacity="0.42"/>
 
-                <!-- Pion putih di e5 (siap en passant) -->
-                <text x="112.5" y="87.5" font-size="20" fill="white" text-anchor="middle" dominant-baseline="central">♙</text>
+                <!-- Pion hitam bayangan di d7 (posisi awal) -->
+                <text x="87.5" y="37.5" font-size="18" fill="black"
+                      text-anchor="middle" dominant-baseline="central" opacity="0.28">♟</text>
 
-                <!-- Highlight: kotak en passant (d6 = x75, y50) -->
-                <rect x="75" y="50" width="25" height="25" fill="#22c55e" fill-opacity="0.45"/>
+                <!-- Panah pion hitam d7→d5 -->
+                <line x1="87.5" y1="44" x2="87.5" y2="84"
+                      stroke="#374151" stroke-width="1.8" stroke-dasharray="3,2"
+                      marker-end="url(#arr-ep-blk)"/>
 
-                <!-- Panah en passant: pion putih dari e5 ke d6 -->
-                <line x1="112.5" y1="84" x2="90" y2="65" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+                <!-- Pion hitam di d5 -->
+                <text x="87.5" y="87.5" font-size="20" fill="black"
+                      text-anchor="middle" dominant-baseline="central">♟</text>
 
-                <!-- Tanda X di pion hitam (akan dimakan) -->
-                <g stroke="#ef4444" stroke-width="2.5" opacity="0.7">
+                <!-- Pion putih di e5 -->
+                <text x="112.5" y="87.5" font-size="20" fill="white"
+                      text-anchor="middle" dominant-baseline="central">♙</text>
+
+                <!-- Panah en passant: pion putih e5 → d6 -->
+                <line x1="108" y1="84" x2="92" y2="68"
+                      stroke="#16a34a" stroke-width="2"
+                      marker-end="url(#arr-ep-grn)"/>
+
+                <!-- Tanda × di pion hitam d5 (dimakan) -->
+                <g stroke="#ef4444" stroke-width="2.2" opacity="0.75">
                     <line x1="81" y1="81" x2="94" y2="94"/>
                     <line x1="94" y1="81" x2="81" y2="94"/>
                 </g>
 
-                <!-- Label koordinat -->
-                <text x="87.5" y="210" font-size="7" fill="#374151" text-anchor="middle" font-weight="bold">d</text>
-                <text x="112.5" y="210" font-size="7" fill="#374151" text-anchor="middle" font-weight="bold">e</text>
-
                 <!-- Label baris -->
-                <text x="195" y="40" font-size="6" fill="white" text-anchor="end" opacity="0.7">7</text>
-                <text x="195" y="65" font-size="6" fill="white" text-anchor="end" opacity="0.7">6</text>
-                <text x="195" y="90" font-size="6" fill="white" text-anchor="end" opacity="0.7">5</text>
+                <text x="196" y="40"  font-size="5.5" fill="white" text-anchor="end" opacity="0.70">7</text>
+                <text x="196" y="65"  font-size="5.5" fill="white" text-anchor="end" opacity="0.70">6</text>
+                <text x="196" y="90"  font-size="5.5" fill="white" text-anchor="end" opacity="0.70">5</text>
 
-                <!-- Judul diagram -->
-                <text x="100" y="228" font-size="8" fill="#374151" text-anchor="middle" font-weight="bold">EN PASSANT</text>
+                <!-- Koordinat kolom -->
+                <text x="87.5"  y="209" font-size="5.5" fill="#374151" text-anchor="middle" font-weight="bold">d</text>
+                <text x="112.5" y="209" font-size="5.5" fill="#374151" text-anchor="middle" font-weight="bold">e</text>
+                <text x="100"   y="219" font-size="7.5" fill="#15803d" text-anchor="middle" font-weight="bold">♙ EN PASSANT</text>
             </svg>
-            <!-- Legenda -->
-            <div style="display:flex; gap:6px; margin-top:6px; justify-content:center; flex-wrap:wrap;">
-                <span style="display:flex;align-items:center;gap:3px;font-size:8px;color:#555;">
-                    <span style="width:7px;height:7px;background:#374151;border-radius:2px;display:inline-block;"></span> Hitam maju 2
+
+            <div style="display:flex;gap:6px;margin-top:4px;justify-content:center;flex-wrap:wrap;">
+                <span style="display:flex;align-items:center;gap:3px;font-size:7.5px;color:#555;">
+                    <span style="width:7px;height:7px;background:#374151;border-radius:2px;display:inline-block;opacity:.7"></span>
+                    Hitam maju 2 (d7→d5)
                 </span>
-                <span style="display:flex;align-items:center;gap:3px;font-size:8px;color:#555;">
-                    <span style="width:7px;height:7px;background:#22c55e;border-radius:2px;display:inline-block;"></span> En passant
+                <span style="display:flex;align-items:center;gap:3px;font-size:7.5px;color:#555;">
+                    <span style="width:7px;height:7px;background:#22c55e;border-radius:2px;display:inline-block;opacity:.8"></span>
+                    Tujuan en passant (d6)
                 </span>
-                <span style="display:flex;align-items:center;gap:3px;font-size:8px;color:#555;">
-                    <span style="width:7px;height:7px;background:#ef4444;border-radius:2px;display:inline-block;"></span> Dimakan
+                <span style="display:flex;align-items:center;gap:3px;font-size:7.5px;color:#555;">
+                    <span style="width:7px;height:7px;background:#ef4444;border-radius:2px;display:inline-block;opacity:.7"></span>
+                    Pion hitam dimakan
                 </span>
             </div>
         </div>
+
         <div class="text-content">
-            <h3 class="text-xl font-extrabold text-chess-green uppercase mb-3 leading-tight">⚡ Aturan Spesial: En Passant</h3>
+            <h3 class="text-xl font-extrabold text-chess-green uppercase mb-3 leading-tight">Aturan Spesial: En Passant</h3>
             <p class="text-gray-600 leading-relaxed text-sm">
-                <strong>En passant</strong> (bahasa Prancis: "sambil lewat") adalah aturan khusus yang hanya berlaku untuk pion. Aturan ini muncul ketika pion lawan maju 2 kotak dari posisi awalnya dan berhenti <strong>tepat di samping</strong> pion milik kita.
+                <em>En passant</em> — dari bahasa Prancis, secara harfiah berarti "sambil lewat" — adalah salah satu aturan paling unik dalam catur dan berlaku secara eksklusif untuk pion. Aturan ini muncul dari situasi yang sangat spesifik: ketika pion lawan memanfaatkan hak maju dua kotak pada langkah pertamanya dan mendarat tepat di samping pion milik kita, seolah ia "melewati" petak yang seharusnya bisa dijadikan sasaran tangkap.
                 <br><br>
-                <strong>Perhatikan diagram:</strong> Pion hitam di <strong>d7</strong> maju 2 kotak ke <strong>d5</strong> (ditandai panah abu-abu). Pion putih di <strong>e5</strong> berada tepat di sampingnya.
+                Perhatikan diagram. Pion hitam berada di <strong>d7</strong> dan maju dua kotak langsung ke <strong>d5</strong>, berhenti tepat di samping pion putih yang ada di <strong>e5</strong>. Dalam situasi ini, pion putih memiliki hak untuk menangkap pion hitam tersebut secara diagonal ke kotak <strong>d6</strong> — seolah pion hitam hanya melangkah satu kotak saja. Pion hitam di d5 diambil dari papan, meskipun pion putih tidak mendarat di petak yang ditempatinya.
                 <br><br>
-                Dalam situasi ini, pion putih boleh <strong>menangkap pion hitam secara diagonal</strong> ke kotak <strong>d6</strong> (kotak hijau), seolah-olah pion hitam hanya maju 1 kotak saja. Pion hitam di d5 akan diambil dari papan (ditandai silang merah ✕).
+                Yang perlu diperhatikan adalah jendela waktu pelaksanaannya. Hak <em>en passant</em> hanya berlaku pada giliran langsung setelah pion lawan melakukan lompatan dua kotak. Jika kesempatan itu dilewatkan — bahkan hanya satu giliran — hak tersebut gugur selamanya untuk pion hitam yang sama. Tidak ada penundaan, tidak ada pengecualian.
                 <br><br>
                 <span class="bg-amber-50 border border-amber-200 px-2 py-1 rounded text-xs inline-block mt-1">
-                    ⚠️ <strong>Penting:</strong> En passant <u>hanya bisa dilakukan segera</u> pada giliran berikutnya setelah pion lawan maju 2 kotak. Jika kamu tidak langsung melakukannya, hak en passant hangus dan tidak bisa digunakan lagi.
+                    ⚠️ <strong>Penting:</strong> En passant hanya bisa dilakukan segera pada giliran berikutnya setelah pion lawan maju dua kotak. Jika tidak langsung digunakan, hak ini hangus dan tidak bisa dipakai lagi.
                 </span>
             </p>
         </div>
     </div>
 
     <!-- ============================================ -->
-    <!-- SUB-SECTION: PROMOSI PION -->
+    <!-- SUB-SECTION: PROMOSI PION                   -->
     <!-- ============================================ -->
     <div class="content-row" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px dashed #e5e7eb;">
         <div class="board-panel relative" style="float: right; margin-left: 1.5rem; margin-bottom: 1rem;">
-            <svg viewBox="0 0 200 260" class="w-full h-full">
+            <svg viewBox="0 0 200 280" class="w-full h-full">
+                <!-- Papan 8×8 -->
                 <rect width="200" height="200" fill="#769656"/>
-                <g fill="#eeeed2"><rect width="25" height="25" x="0" y="0"/><rect width="25" height="25" x="50" y="0"/><rect width="25" height="25" x="100" y="0"/><rect width="25" height="25" x="150" y="0"/><rect width="25" height="25" x="25" y="25"/><rect width="25" height="25" x="75" y="25"/><rect width="25" height="25" x="125" y="25"/><rect width="25" height="25" x="175" y="25"/><rect width="25" height="25" x="0" y="50"/><rect width="25" height="25" x="50" y="50"/><rect width="25" height="25" x="100" y="50"/><rect width="25" height="25" x="150" y="50"/><rect width="25" height="25" x="25" y="75"/><rect width="25" height="25" x="75" y="75"/><rect width="25" height="25" x="125" y="75"/><rect width="25" height="25" x="175" y="75"/><rect width="25" height="25" x="0" y="100"/><rect width="25" height="25" x="50" y="100"/><rect width="25" height="25" x="100" y="100"/><rect width="25" height="25" x="150" y="100"/><rect width="25" height="25" x="25" y="125"/><rect width="25" height="25" x="75" y="125"/><rect width="25" height="25" x="125" y="125"/><rect width="25" height="25" x="175" y="125"/><rect width="25" height="25" x="0" y="150"/><rect width="25" height="25" x="50" y="150"/><rect width="25" height="25" x="100" y="150"/><rect width="25" height="25" x="150" y="150"/><rect width="25" height="25" x="25" y="175"/><rect width="25" height="25" x="75" y="175"/><rect width="25" height="25" x="125" y="175"/><rect width="25" height="25" x="175" y="175"/></g>
+                <g fill="#eeeed2">
+                    <rect x="0"   y="0"   width="25" height="25"/><rect x="50"  y="0"   width="25" height="25"/>
+                    <rect x="100" y="0"   width="25" height="25"/><rect x="150" y="0"   width="25" height="25"/>
+                    <rect x="25"  y="25"  width="25" height="25"/><rect x="75"  y="25"  width="25" height="25"/>
+                    <rect x="125" y="25"  width="25" height="25"/><rect x="175" y="25"  width="25" height="25"/>
+                    <rect x="0"   y="50"  width="25" height="25"/><rect x="50"  y="50"  width="25" height="25"/>
+                    <rect x="100" y="50"  width="25" height="25"/><rect x="150" y="50"  width="25" height="25"/>
+                    <rect x="25"  y="75"  width="25" height="25"/><rect x="75"  y="75"  width="25" height="25"/>
+                    <rect x="125" y="75"  width="25" height="25"/><rect x="175" y="75"  width="25" height="25"/>
+                    <rect x="0"   y="100" width="25" height="25"/><rect x="50"  y="100" width="25" height="25"/>
+                    <rect x="100" y="100" width="25" height="25"/><rect x="150" y="100" width="25" height="25"/>
+                    <rect x="25"  y="125" width="25" height="25"/><rect x="75"  y="125" width="25" height="25"/>
+                    <rect x="125" y="125" width="25" height="25"/><rect x="175" y="125" width="25" height="25"/>
+                    <rect x="0"   y="150" width="25" height="25"/><rect x="50"  y="150" width="25" height="25"/>
+                    <rect x="100" y="150" width="25" height="25"/><rect x="150" y="150" width="25" height="25"/>
+                    <rect x="25"  y="175" width="25" height="25"/><rect x="75"  y="175" width="25" height="25"/>
+                    <rect x="125" y="175" width="25" height="25"/><rect x="175" y="175" width="25" height="25"/>
+                </g>
 
                 <defs>
-                    <marker id="arrow-promo" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-                        <path d="M0,0 L6,3 L0,6 Z" fill="#8b5cf6"/>
-                    </marker>
-                    <!-- Glow effect untuk promosi -->
-                    <filter id="glow">
-                        <feGaussianBlur stdDeviation="2" result="blur"/>
-                        <feMerge>
-                            <feMergeNode in="blur"/>
-                            <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-                    </filter>
+                    <marker id="arr-promo" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                        <path d="M0,0 L6,3 L0,6 Z" fill="#7c3aed"/></marker>
                 </defs>
 
-                <!-- Highlight: baris promosi (rank 8) -->
-                <rect x="0" y="0" width="200" height="25" fill="#8b5cf6" fill-opacity="0.2"/>
-                <rect x="0" y="0" width="200" height="25" fill="none" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <!--
+                    PROMOSI PION:
+                    Pion putih di e7 (112.5,37.5) maju ke e8 (112.5,12.5)
+                    Zona promosi = rank 8 (y=0..25)
+                -->
 
-                <!-- Label "ZONA PROMOSI" -->
-                <text x="100" y="12" font-size="6.5" fill="#7c3aed" text-anchor="middle" font-weight="bold" letter-spacing="1">★ ZONA PROMOSI ★</text>
+                <!-- Highlight zona promosi (rank 8) -->
+                <rect x="0" y="0" width="200" height="25" fill="#7c3aed" fill-opacity="0.18"/>
+                <rect x="0" y="0" width="200" height="25" fill="none"
+                      stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="4,3"/>
 
-                <!-- Pion putih di e7 (y=25) siap promosi -->
-                <rect x="100" y="25" width="25" height="25" fill="#8b5cf6" fill-opacity="0.3"/>
-                <text x="112.5" y="37.5" font-size="20" fill="white" text-anchor="middle" dominant-baseline="central">♙</text>
+                <!-- Label zona promosi -->
+                <text x="100" y="12" font-size="6" fill="#6d28d9"
+                      text-anchor="middle" dominant-baseline="central"
+                      font-weight="bold" letter-spacing="0.5">★ ZONA PROMOSI ★</text>
 
-                <!-- Panah promosi ke atas -->
-                <line x1="112.5" y1="30" x2="112.5" y2="18" stroke="#8b5cf6" stroke-width="2.5" marker-end="url(#arrow-promo)"/>
+                <!-- Highlight petak e7 (pion siap) -->
+                <rect x="100" y="25" width="25" height="25" fill="#7c3aed" fill-opacity="0.28"/>
 
-                <!-- Kotak target promosi dengan glow -->
-                <rect x="100" y="0" width="25" height="25" fill="#8b5cf6" fill-opacity="0.35" filter="url(#glow)"/>
+                <!-- Pion putih di e7 -->
+                <text x="112.5" y="37.5" font-size="20" fill="white"
+                      text-anchor="middle" dominant-baseline="central">♙</text>
 
-                <!-- Pilihan promosi di bawah papan -->
-                <!-- Background pilihan -->
-                <rect x="10" y="210" width="180" height="40" rx="6" fill="#f8fafc" stroke="#8b5cf6" stroke-width="1"/>
-
-                <!-- Label -->
-                <text x="100" y="220" font-size="6" fill="#7c3aed" text-anchor="middle" font-weight="bold">PILIH PROMOSI:</text>
-
-                <!-- 4 pilihan bidak -->
-                <!-- Ratu (paling sering dipilih) -->
-                <rect x="18" y="226" width="30" height="20" rx="3" fill="#7c3aed" fill-opacity="0.15" stroke="#7c3aed" stroke-width="1"/>
-                <text x="33" y="238" font-size="14" text-anchor="middle" dominant-baseline="central">♕</text>
-                <text x="33" y="250" font-size="4.5" fill="#7c3aed" text-anchor="middle" font-weight="bold">RATU ★</text>
-
-                <!-- Benteng -->
-                <rect x="58" y="226" width="30" height="20" rx="3" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.5"/>
-                <text x="73" y="238" font-size="14" text-anchor="middle" dominant-baseline="central">♖</text>
-                <text x="73" y="250" font-size="4.5" fill="#64748b" text-anchor="middle">BENTENG</text>
-
-                <!-- Gajah -->
-                <rect x="98" y="226" width="30" height="20" rx="3" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.5"/>
-                <text x="113" y="238" font-size="14" text-anchor="middle" dominant-baseline="central">♗</text>
-                <text x="113" y="250" font-size="4.5" fill="#64748b" text-anchor="middle">GAJAH</text>
-
-                <!-- Kuda -->
-                <rect x="138" y="226" width="30" height="20" rx="3" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.5"/>
-                <text x="153" y="238" font-size="14" text-anchor="middle" dominant-baseline="central">♘</text>
-                <text x="153" y="250" font-size="4.5" fill="#64748b" text-anchor="middle">KUDA</text>
-
-                <!-- Label koordinat -->
-                <text x="112.5" y="207" font-size="7" fill="#374151" text-anchor="middle" font-weight="bold">e</text>
+                <!-- Panah promosi e7→e8 -->
+                <line x1="112.5" y1="30" x2="112.5" y2="16"
+                      stroke="#7c3aed" stroke-width="2.5"
+                      marker-end="url(#arr-promo)"/>
 
                 <!-- Label baris -->
-                <text x="5" y="14" font-size="6" fill="#7c3aed" text-anchor="start" font-weight="bold">8</text>
-                <text x="5" y="39" font-size="6" fill="white" text-anchor="start" opacity="0.7">7</text>
+                <text x="4" y="13"  font-size="6" fill="#7c3aed" text-anchor="start" font-weight="bold">8</text>
+                <text x="4" y="38"  font-size="6" fill="white"   text-anchor="start" opacity="0.65">7</text>
+
+                <!-- Koordinat kolom -->
+                <text x="112.5" y="207" font-size="5.5" fill="#374151"
+                      text-anchor="middle" font-weight="bold">e</text>
+
+                <!-- Panel pilihan promosi -->
+                <rect x="8" y="213" width="184" height="55" rx="6"
+                      fill="#f8fafc" stroke="#7c3aed" stroke-width="1"/>
+
+                <text x="100" y="225" font-size="6" fill="#6d28d9"
+                      text-anchor="middle" font-weight="bold">PILIH PROMOSI:</text>
+
+                <!-- Ratu (direkomendasikan) -->
+                <rect x="14" y="230" width="36" height="28" rx="4"
+                      fill="#ede9fe" stroke="#7c3aed" stroke-width="1.2"/>
+                <text x="32" y="244" font-size="15"
+                      text-anchor="middle" dominant-baseline="central">♕</text>
+                <text x="32" y="256" font-size="5" fill="#6d28d9"
+                      text-anchor="middle" font-weight="bold">RATU ★</text>
+
+                <!-- Benteng -->
+                <rect x="58" y="230" width="36" height="28" rx="4"
+                      fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.8"/>
+                <text x="76" y="244" font-size="15"
+                      text-anchor="middle" dominant-baseline="central">♖</text>
+                <text x="76" y="256" font-size="5" fill="#64748b"
+                      text-anchor="middle">BENTENG</text>
+
+                <!-- Gajah -->
+                <rect x="102" y="230" width="36" height="28" rx="4"
+                      fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.8"/>
+                <text x="120" y="244" font-size="15"
+                      text-anchor="middle" dominant-baseline="central">♗</text>
+                <text x="120" y="256" font-size="5" fill="#64748b"
+                      text-anchor="middle">GAJAH</text>
+
+                <!-- Kuda -->
+                <rect x="146" y="230" width="36" height="28" rx="4"
+                      fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.8"/>
+                <text x="164" y="244" font-size="15"
+                      text-anchor="middle" dominant-baseline="central">♘</text>
+                <text x="164" y="256" font-size="5" fill="#64748b"
+                      text-anchor="middle">KUDA</text>
+
+                <text x="100" y="275" font-size="7.5" fill="#7c3aed"
+                      text-anchor="middle" font-weight="bold">♙ PROMOSI PION</text>
             </svg>
-            <!-- Legenda -->
-            <div style="display:flex; gap:6px; margin-top:6px; justify-content:center; flex-wrap:wrap;">
-                <span style="display:flex;align-items:center;gap:3px;font-size:8px;color:#555;">
-                    <span style="width:7px;height:7px;background:#8b5cf6;border-radius:2px;display:inline-block;"></span> Zona promosi
+
+            <div style="display:flex;gap:6px;margin-top:4px;justify-content:center;flex-wrap:wrap;">
+                <span style="display:flex;align-items:center;gap:3px;font-size:7.5px;color:#555;">
+                    <span style="width:7px;height:7px;background:#7c3aed;border-radius:2px;display:inline-block;opacity:.7"></span>
+                    Zona promosi (rank 8)
                 </span>
-                <span style="display:flex;align-items:center;gap:3px;font-size:8px;color:#555;">
-                    <span style="width:7px;height:3px;background:#7c3aed;border-radius:1px;display:inline-block;"></span> Pilihan bidak
+                <span style="display:flex;align-items:center;gap:3px;font-size:7.5px;color:#555;">
+                    <span style="width:7px;height:7px;background:#ede9fe;border:1px solid #7c3aed;border-radius:2px;display:inline-block;"></span>
+                    Pilihan bidak
                 </span>
             </div>
         </div>
+
         <div class="text-content">
-            <h3 class="text-xl font-extrabold text-chess-green uppercase mb-3 leading-tight">👑 Aturan Spesial: Promosi Pion</h3>
+            <h3 class="text-xl font-extrabold text-chess-green uppercase mb-3 leading-tight">Aturan Spesial: Promosi Pion</h3>
             <p class="text-gray-600 leading-relaxed text-sm">
-                <strong>Promosi pion</strong> adalah aturan yang terjadi ketika sebuah pion berhasil mencapai <strong>baris paling ujung papan</strong> (baris 8 untuk putih, baris 1 untuk hitam).
+                Promosi pion adalah momen yang paling dramatis dalam perjalanan sebuah pion. Ketika pion putih berhasil mencapai <strong>baris ke-8</strong> — atau pion hitam mencapai baris ke-1 — ia tidak boleh berhenti menjadi pion. Ia wajib segera dipromosikan menjadi bidak lain: ratu, benteng, gajah, atau kuda. Tidak ada pilihan untuk melewati aturan ini.
                 <br><br>
-                <strong>Perhatikan diagram:</strong> Pion putih di <strong>e7</strong> tinggal selangkah lagi menuju baris 8 (zona ungu). Ketika pion ini melangkah ke <strong>e8</strong>, pion tersebut <strong>wajib dipromosikan</strong> — tidak boleh tetap menjadi pion.
+                Perhatikan diagram. Pion putih berada di <strong>e7</strong>, hanya satu langkah dari zona promosi yang ditandai ungu. Begitu pion melangkah ke <strong>e8</strong>, pemain harus memilih salah satu dari empat bidak di panel bawah sebagai gantinya.
                 <br><br>
-                Pemain berhak memilih salah satu dari empat bidak berikut sebagai pengganti:
-                <br>
+                Dalam hampir semua situasi, pilihan yang paling kuat adalah ratu karena ia adalah bidak dengan mobilitas tertinggi di papan. Namun ada kalanya memilih kuda justru lebih menguntungkan, terutama ketika kuda tersebut bisa langsung memberikan skak atau skakmat dalam pola yang tidak bisa dilakukan oleh ratu.
+                <br><br>
             </p>
-            <div style="display:flex; gap:8px; margin:8px 0; flex-wrap:wrap;">
+            <div style="display:flex;gap:8px;margin:8px 0;flex-wrap:wrap;">
                 <span style="background:#f3e8ff;border:1px solid #c4b5fd;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:bold;color:#6d28d9;">♕ Ratu</span>
                 <span style="background:#f1f5f9;border:1px solid #cbd5e1;padding:4px 10px;border-radius:6px;font-size:12px;color:#475569;">♖ Benteng</span>
                 <span style="background:#f1f5f9;border:1px solid #cbd5e1;padding:4px 10px;border-radius:6px;font-size:12px;color:#475569;">♗ Gajah</span>
                 <span style="background:#f1f5f9;border:1px solid #cbd5e1;padding:4px 10px;border-radius:6px;font-size:12px;color:#475569;">♘ Kuda</span>
             </div>
             <p class="text-gray-600 leading-relaxed text-sm">
-                Dalam kebanyakan situasi, pemain akan memilih <strong>Ratu (♕)</strong> karena merupakan bidak terkuat yang bisa bergerak ke segala arah. Namun ada situasi langka di mana memilih <strong>Kuda</strong> justru lebih menguntungkan, misalnya untuk langsung memberikan skak atau skakmat.
-                <br><br>
                 <span class="bg-purple-50 border border-purple-200 px-2 py-1 rounded text-xs inline-block mt-1">
-                    💡 <strong>Tips:</strong> Promosi pion menjadikan setiap pion berpotensi sangat berbahaya. Di akhir permainan (<em>endgame</em>), meloloskan pion ke baris promosi sering kali menjadi kunci kemenangan!
+                    💡 <strong>Tips:</strong> Di fase akhir permainan, meloloskan pion hingga mencapai baris promosi sering kali menjadi penentu kemenangan. Pion yang tampak tidak berbahaya di tengah permainan bisa berubah menjadi ratu dalam beberapa langkah.
                 </span>
                 <br><br>
                 <span class="bg-blue-50 border border-blue-200 px-2 py-1 rounded text-xs inline-block">
-                    📌 <strong>Catatan:</strong> Secara teori, kamu bisa memiliki hingga <strong>9 ratu</strong> sekaligus di papan — 1 ratu asli + 8 pion yang semuanya dipromosikan menjadi ratu!
+                    📌 <strong>Catatan:</strong> Secara teoritis, sebuah pemain bisa memiliki hingga sembilan ratu sekaligus di papan — satu ratu asli ditambah delapan pion yang semuanya berhasil dipromosikan.
                 </span>
             </p>
         </div>
     </div>
 </div>
+
+<!-- ================================================================================================================================================== -->
             <!-- Section 2 -->
-            <div class="section-block">
-                <div class="flex items-center gap-4 mb-4">
-                    <span class="section-number text-3xl">2</span>
-                    <h3 class="text-2xl font-extrabold text-chess-green uppercase leading-tight">♞ KUDA (Knight)</h3>
-                </div>
-                <p class="text-gray-600 mb-6 leading-snug">Kuda adalah bidak unik dalam catur karena gerakannya berbeda dari semua bidak lain. Jika bidak lain bergerak lurus atau diagonal, kuda bergerak dengan pola berbentuk huruf “L”. Kuda juga memiliki kemampuan spesial yang membuatnya sangat berbahaya: ia bisa melompati bidak lain.</p>
-                <div class="content-row">
-                <div class="board-panel relative" style="float: left; margin-right: 1.5rem; margin-bottom: 1rem;">
-                    <svg viewBox="0 0 200 200" class="w-full h-full">
-                        <rect width="200" height="200" fill="#769656"/>
-                        <g fill="#eeeed2"><rect width="25" height="25" x="0" y="0"/><rect width="25" height="25" x="50" y="0"/><rect width="25" height="25" x="100" y="0"/><rect width="25" height="25" x="150" y="0"/><rect width="25" height="25" x="25" y="25"/><rect width="25" height="25" x="75" y="25"/><rect width="25" height="25" x="125" y="25"/><rect width="25" height="25" x="175" y="25"/><rect width="25" height="25" x="0" y="50"/><rect width="25" height="25" x="50" y="50"/><rect width="25" height="25" x="100" y="50"/><rect width="25" height="25" x="150" y="50"/><rect width="25" height="25" x="25" y="75"/><rect width="25" height="25" x="75" y="75"/><rect width="25" height="25" x="125" y="75"/><rect width="25" height="25" x="175" y="75"/><rect width="25" height="25" x="0" y="100"/><rect width="25" height="25" x="50" y="100"/><rect width="25" height="25" x="100" y="100"/><rect width="25" height="25" x="150" y="100"/><rect width="25" height="25" x="25" y="125"/><rect width="25" height="25" x="75" y="125"/><rect width="25" height="25" x="125" y="125"/><rect width="25" height="25" x="175" y="125"/><rect width="25" height="25" x="0" y="150"/><rect width="25" height="25" x="50" y="150"/><rect width="25" height="25" x="100" y="150"/><rect width="25" height="25" x="150" y="150"/><rect width="25" height="25" x="25" y="175"/><rect width="25" height="25" x="75" y="175"/><rect width="25" height="25" x="125" y="175"/><rect width="25" height="25" x="175" y="175"/></g>
-                        <rect x="125" y="75" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
-                        <rect x="100" y="50" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
-                        <rect x="50" y="50" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
-                        <rect x="25" y="75" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
-                        <rect x="25" y="125" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
-                        <rect x="50" y="150" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
-                        <rect x="100" y="150" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
-                        <rect x="125" y="125" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
-                        <text x="87.5" y="112.5" font-size="20" fill="white" text-anchor="middle" dominant-baseline="central">♘</text>
-                    </svg>
-                </div>
-                    <div class="text-content">
-                        <h3 class="text-xl font-extrabold text-chess-green uppercase mb-3 leading-tight">Nilai: 3 poin</h3>
-                        <p class="text-gray-600 leading-relaxed text-sm"><strong>Kuda adalah bidak catur dengan nilai 3 poin</strong> dan memiliki pola gerakan yang paling berbeda dibandingkan bidak lainnya. Jika bidak lain bergerak lurus atau diagonal, kuda bergerak membentuk huruf “L”. Pola ini berarti kuda melangkah 2 kotak lurus ke satu arah, lalu berbelok 1 kotak ke samping. Gerakan ini juga bisa dibalik, yaitu 1 kotak lurus lalu 2 kotak ke samping.  <br><br><strong>Keunggulan utama kuda adalah kemampuannya untuk melompati bidak lain.</strong> Kuda merupakan satu-satunya bidak dalam catur yang dapat melewati bidak kawan maupun lawan yang menghalangi jalannya. Hal ini membuat kuda sangat berguna dalam posisi papan yang padat, ketika bidak-bidak lain sulit bergerak bebas.  <br><br>Kuda menangkap bidak lawan dengan cara menempati kotak tujuan akhirnya. Jadi, meskipun ia melompati bidak lain di tengah jalan, yang dihitung hanya kotak terakhir tempat ia mendarat. Inilah yang membuat serangan kuda sering kali mengejutkan dan sulit diprediksi oleh lawan.  <br><br>Dari posisi tengah papan, kuda memiliki maksimal 8 kotak tujuan yang dapat dijangkau. Namun jika berada di tepi atau pojok papan, jumlah langkah yang tersedia akan berkurang drastis. Karena itu, dalam strategi catur, kuda dikenal jauh lebih kuat saat ditempatkan di tengah papan dibandingkan di pinggir.  <br><br>Memahami gerakan kuda sangat penting karena bidak ini sering digunakan untuk serangan taktis seperti fork atau garpu, yaitu menyerang dua bidak lawan sekaligus. Dengan pola geraknya yang unik, kuda bisa menjadi senjata berbahaya dalam permainan catur.</p>
-                    </div>
-                </div>
+<!-- ================================================================================================================================================== -->			
+<div class="section-block">
+    <div class="flex items-center gap-4 mb-4">
+        <span class="section-number text-3xl">2</span>
+        <h3 class="text-2xl font-extrabold text-chess-green uppercase leading-tight">♞ KUDA (Knight)</h3>
+    </div>
+    <p class="text-gray-600 mb-6 leading-snug">Kuda adalah bidak unik dalam catur karena gerakannya berbeda dari semua bidak lain. Jika bidak lain bergerak lurus atau diagonal, kuda bergerak dengan pola berbentuk huruf "L". Kuda juga memiliki kemampuan spesial yang membuatnya sangat berbahaya: ia bisa melompati bidak lain.</p>
+
+    <!-- ============================================ -->
+    <!-- GERAKAN DASAR KUDA                          -->
+    <!-- ============================================ -->
+    <div class="content-row">
+        <div class="board-panel relative" style="float: left; margin-right: 1.5rem; margin-bottom: 1rem;">
+            <svg viewBox="0 0 200 220" class="w-full h-full">
+                <!-- Papan 8×8 -->
+                <rect width="200" height="200" fill="#769656"/>
+                <g fill="#eeeed2">
+                    <rect x="0"   y="0"   width="25" height="25"/><rect x="50"  y="0"   width="25" height="25"/>
+                    <rect x="100" y="0"   width="25" height="25"/><rect x="150" y="0"   width="25" height="25"/>
+                    <rect x="25"  y="25"  width="25" height="25"/><rect x="75"  y="25"  width="25" height="25"/>
+                    <rect x="125" y="25"  width="25" height="25"/><rect x="175" y="25"  width="25" height="25"/>
+                    <rect x="0"   y="50"  width="25" height="25"/><rect x="50"  y="50"  width="25" height="25"/>
+                    <rect x="100" y="50"  width="25" height="25"/><rect x="150" y="50"  width="25" height="25"/>
+                    <rect x="25"  y="75"  width="25" height="25"/><rect x="75"  y="75"  width="25" height="25"/>
+                    <rect x="125" y="75"  width="25" height="25"/><rect x="175" y="75"  width="25" height="25"/>
+                    <rect x="0"   y="100" width="25" height="25"/><rect x="50"  y="100" width="25" height="25"/>
+                    <rect x="100" y="100" width="25" height="25"/><rect x="150" y="100" width="25" height="25"/>
+                    <rect x="25"  y="125" width="25" height="25"/><rect x="75"  y="125" width="25" height="25"/>
+                    <rect x="125" y="125" width="25" height="25"/><rect x="175" y="125" width="25" height="25"/>
+                    <rect x="0"   y="150" width="25" height="25"/><rect x="50"  y="150" width="25" height="25"/>
+                    <rect x="100" y="150" width="25" height="25"/><rect x="150" y="150" width="25" height="25"/>
+                    <rect x="25"  y="175" width="25" height="25"/><rect x="75"  y="175" width="25" height="25"/>
+                    <rect x="125" y="175" width="25" height="25"/><rect x="175" y="175" width="25" height="25"/>
+                </g>
+
+                <!--
+                    Kuda putih di d4 (87.5, 112.5)
+                    8 petak tujuan L-move dari d4:
+                    c6 (62.5, 62.5)   — 1 kiri 2 atas
+                    e6 (112.5, 62.5)  — 1 kanan 2 atas
+                    b5 (37.5, 87.5)   — 2 kiri 1 atas
+                    f5 (137.5, 87.5)  — 2 kanan 1 atas
+                    b3 (37.5, 137.5)  — 2 kiri 1 bawah
+                    f3 (137.5, 137.5) — 2 kanan 1 bawah
+                    c2 (62.5, 162.5)  — 1 kiri 2 bawah
+                    e2 (112.5, 162.5) — 1 kanan 2 bawah
+                -->
+
+                <!-- Highlight 8 kotak tujuan kuda -->
+                <rect x="50"  y="50"  width="25" height="25" fill="#facc15" fill-opacity="0.55"/>
+                <rect x="100" y="50"  width="25" height="25" fill="#facc15" fill-opacity="0.55"/>
+                <rect x="25"  y="75"  width="25" height="25" fill="#facc15" fill-opacity="0.55"/>
+                <rect x="125" y="75"  width="25" height="25" fill="#facc15" fill-opacity="0.55"/>
+                <rect x="25"  y="125" width="25" height="25" fill="#facc15" fill-opacity="0.55"/>
+                <rect x="125" y="125" width="25" height="25" fill="#facc15" fill-opacity="0.55"/>
+                <rect x="50"  y="150" width="25" height="25" fill="#facc15" fill-opacity="0.55"/>
+                <rect x="100" y="150" width="25" height="25" fill="#facc15" fill-opacity="0.55"/>
+
+                <!-- Titik di setiap kotak tujuan -->
+                <circle cx="62.5"  cy="62.5"  r="5" fill="#facc15" fill-opacity="0.90"/>
+                <circle cx="112.5" cy="62.5"  r="5" fill="#facc15" fill-opacity="0.90"/>
+                <circle cx="37.5"  cy="87.5"  r="5" fill="#facc15" fill-opacity="0.90"/>
+                <circle cx="137.5" cy="87.5"  r="5" fill="#facc15" fill-opacity="0.90"/>
+                <circle cx="37.5"  cy="137.5" r="5" fill="#facc15" fill-opacity="0.90"/>
+                <circle cx="137.5" cy="137.5" r="5" fill="#facc15" fill-opacity="0.90"/>
+                <circle cx="62.5"  cy="162.5" r="5" fill="#facc15" fill-opacity="0.90"/>
+                <circle cx="112.5" cy="162.5" r="5" fill="#facc15" fill-opacity="0.90"/>
+
+                <!-- Kuda putih di d4 -->
+                <text x="87.5" y="112.5" font-size="22" fill="white"
+                      text-anchor="middle" dominant-baseline="central">♘</text>
+
+                <!-- Label judul -->
+                <text x="100" y="10" font-size="7" fill="white"
+                      text-anchor="middle" font-weight="bold" opacity="0.90">GERAKAN KUDA — POLA "L"</text>
+
+                <!-- Koordinat kolom -->
+                <text x="37.5"  y="209" font-size="5.5" fill="#374151" text-anchor="middle" font-weight="bold">b</text>
+                <text x="62.5"  y="209" font-size="5.5" fill="#374151" text-anchor="middle" font-weight="bold">c</text>
+                <text x="87.5"  y="209" font-size="5.5" fill="#374151" text-anchor="middle" font-weight="bold">d</text>
+                <text x="112.5" y="209" font-size="5.5" fill="#374151" text-anchor="middle" font-weight="bold">e</text>
+                <text x="137.5" y="209" font-size="5.5" fill="#374151" text-anchor="middle" font-weight="bold">f</text>
+                <text x="100"   y="219" font-size="7.5" fill="#374151" text-anchor="middle" font-weight="bold">♘ 8 KOTAK TUJUAN DARI TENGAH</text>
+            </svg>
+
+            <div style="display:flex;gap:8px;margin-top:4px;justify-content:center;flex-wrap:wrap;">
+                <span style="display:flex;align-items:center;gap:3px;font-size:7.5px;color:#555;">
+                    <span style="width:8px;height:8px;background:#facc15;border-radius:2px;display:inline-block;opacity:.8"></span>
+                    Kotak tujuan pola "L" (8 petak)
+                </span>
             </div>
+        </div>
+
+        <div class="text-content">
+            <h3 class="text-xl font-extrabold text-chess-green uppercase mb-3 leading-tight">Nilai: 3 Poin</h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+                Kuda adalah bidak dengan nilai 3 poin dan memiliki pola gerakan yang paling tidak biasa di antara semua bidak dalam catur. Sementara bidak lain bergerak dalam garis lurus atau diagonal, kuda bergerak dalam pola yang membentuk huruf "L": dua kotak ke satu arah, lalu satu kotak ke sisi tegak lurusnya. Kombinasi ini bisa dilakukan ke delapan arah, menghasilkan maksimal delapan kotak yang bisa dijangkau dari satu posisi — seperti yang terlihat dalam diagram ketika kuda berada di tengah papan.
+                <br><br>
+                Keistimewaan paling menonjol dari kuda adalah kemampuannya melompati bidak lain. Ia adalah satu-satunya bidak dalam catur yang dapat melewati bidak kawan maupun lawan yang berdiri di jalurnya, tanpa peduli seberapa padat posisi di papan. Karena itu, kuda sangat berguna justru di awal permainan ketika papan masih penuh sesak dan bidak-bidak jarak jauh seperti gajah atau benteng belum memiliki ruang untuk bergerak.
+                <br><br>
+                Dalam hal menangkap, kuda bekerja berdasarkan petak akhir yang dituju, bukan jalur yang dilewati. Selama petak tujuannya ditempati oleh bidak lawan, kuda bisa menangkapnya meski melompati banyak bidak di tengah perjalanan. Inilah yang membuat serangan kuda sering terasa tiba-tiba dan sulit diantisipasi.
+                <br><br>
+                Namun kekuatan kuda sangat bergantung pada posisinya. Dari tengah papan, ia bisa menjangkau delapan kotak. Di tepi papan, jumlah itu berkurang menjadi empat. Di pojok, hanya dua kotak yang tersisa. Karena itu, kuda yang ditempatkan di pinggir papan jauh kurang efektif dibandingkan kuda yang ditempatkan di pusat, dan prinsip ini berlaku konsisten di hampir semua fase permainan.
+            </p>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SUB-SECTION: KUDA DI TEPI vs TENGAH         -->
+    <!-- ============================================ -->
+    <div class="content-row" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px dashed #e5e7eb;">
+        <div class="board-panel relative" style="float: right; margin-left: 1.5rem; margin-bottom: 1rem;">
+            <svg viewBox="0 0 200 220" class="w-full h-full">
+                <!-- Papan 8×8 -->
+                <rect width="200" height="200" fill="#769656"/>
+                <g fill="#eeeed2">
+                    <rect x="0"   y="0"   width="25" height="25"/><rect x="50"  y="0"   width="25" height="25"/>
+                    <rect x="100" y="0"   width="25" height="25"/><rect x="150" y="0"   width="25" height="25"/>
+                    <rect x="25"  y="25"  width="25" height="25"/><rect x="75"  y="25"  width="25" height="25"/>
+                    <rect x="125" y="25"  width="25" height="25"/><rect x="175" y="25"  width="25" height="25"/>
+                    <rect x="0"   y="50"  width="25" height="25"/><rect x="50"  y="50"  width="25" height="25"/>
+                    <rect x="100" y="50"  width="25" height="25"/><rect x="150" y="50"  width="25" height="25"/>
+                    <rect x="25"  y="75"  width="25" height="25"/><rect x="75"  y="75"  width="25" height="25"/>
+                    <rect x="125" y="75"  width="25" height="25"/><rect x="175" y="75"  width="25" height="25"/>
+                    <rect x="0"   y="100" width="25" height="25"/><rect x="50"  y="100" width="25" height="25"/>
+                    <rect x="100" y="100" width="25" height="25"/><rect x="150" y="100" width="25" height="25"/>
+                    <rect x="25"  y="125" width="25" height="25"/><rect x="75"  y="125" width="25" height="25"/>
+                    <rect x="125" y="125" width="25" height="25"/><rect x="175" y="125" width="25" height="25"/>
+                    <rect x="0"   y="150" width="25" height="25"/><rect x="50"  y="150" width="25" height="25"/>
+                    <rect x="100" y="150" width="25" height="25"/><rect x="150" y="150" width="25" height="25"/>
+                    <rect x="25"  y="175" width="25" height="25"/><rect x="75"  y="175" width="25" height="25"/>
+                    <rect x="125" y="175" width="25" height="25"/><rect x="175" y="175" width="25" height="25"/>
+                </g>
+
+                <!-- Pemisah tengah vertikal -->
+                <line x1="100" y1="0" x2="100" y2="200"
+                      stroke="#9ca3af" stroke-width="1" stroke-dasharray="4,3" opacity="0.55"/>
+
+                <!-- === KIRI: Kuda di pojok a1 — hanya 2 kotak === -->
+                <!-- Label POJOK -->
+                <rect x="2" y="2" width="30" height="8" rx="2" fill="#ef4444" fill-opacity="0.85"/>
+                <text x="17" y="6.5" font-size="4.5" fill="white"
+                      text-anchor="middle" dominant-baseline="central" font-weight="bold">POJOK</text>
+
+                <!--
+                    Kuda di a1 (12.5, 187.5)
+                    Tujuan dari a1:
+                    b3 (37.5, 137.5) — 1 kanan 2 atas ✓
+                    c2 (62.5, 162.5) — 2 kanan 1 atas ✓
+                    Hanya 2 kotak
+                -->
+                <rect x="25"  y="125" width="25" height="25" fill="#ef4444" fill-opacity="0.45"/>
+                <rect x="50"  y="150" width="25" height="25" fill="#ef4444" fill-opacity="0.45"/>
+
+                <circle cx="37.5" cy="137.5" r="5" fill="#D3D3D3" fill-opacity="0.90"/>
+                <circle cx="62.5" cy="162.5" r="5" fill="#D3D3D3" fill-opacity="0.90"/>
+
+
+                <text x="12.5" y="187.5" font-size="20" fill="white"
+                      text-anchor="middle" dominant-baseline="central">♘</text>
+
+                <!-- Label "2 kotak" -->
+                <rect x="2" y="108" width="44" height="8" rx="2" fill="#ef4444" fill-opacity="0.82"/>
+                <text x="24" y="112.5" font-size="4.5" fill="white"
+                      text-anchor="middle" dominant-baseline="central" font-weight="bold">Hanya 2 kotak tujuan</text>
+
+                <!-- === KANAN: Kuda di e5 (tengah) — 8 kotak === -->
+                <!-- Label TENGAH -->
+                <rect x="148" y="2" width="48" height="8" rx="2" fill="#16a34a" fill-opacity="0.85"/>
+                <text x="172" y="6.5" font-size="4.5" fill="white"
+                      text-anchor="middle" dominant-baseline="central" font-weight="bold">TENGAH</text>
+
+                <!--
+                    Kuda di e5 (112.5, 87.5) — tapi kita pakai sisi kanan saja
+                    Kuda di f4 (137.5, 112.5) agar cukup ruang di kanan papan
+                    f4→ tujuan:
+                    d3 (87.5,  137.5) — 2 kiri 1 bawah  ✓ (tapi x<100, masuk sisi kiri)
+                    
+                    Revisi: Kuda di f5 (137.5, 87.5)
+                    Tujuan:
+                    d4 (87.5,  112.5) — 2 kiri 1 bawah  — x=87.5 < 100 → masuk kiri, skip
+                    d6 (87.5,  62.5)  — 2 kiri 1 atas   — masuk kiri, skip
+                    e3 (112.5, 137.5) — 1 kiri 2 bawah  ✓
+                    e7 (112.5, 37.5)  — 1 kiri 2 atas   ✓
+                    g3 (162.5, 137.5) — 1 kanan 2 bawah ✓
+                    g7 (162.5, 37.5)  — 1 kanan 2 atas  ✓
+                    h4 (187.5, 112.5) — 2 kanan 1 bawah ✓
+                    h6 (187.5, 62.5)  — 2 kanan 1 atas  ✓
+                    Total 6 di sisi kanan, tapi tunjukkan semua yg valid
+
+                    Lebih baik: Kuda di f5 = (125, 75) center (137.5, 87.5)
+                    Semua 8 tujuan:
+                    d4: (75,100)   center(87.5, 112.5)  — masuk sisi kiri, lewati
+                    d6: (75, 50)   center(87.5,  62.5)  — masuk sisi kiri, lewati
+                    e3: (100,125)  center(112.5,137.5)  ✓
+                    e7: (100, 25)  center(112.5, 37.5)  ✓
+                    g3: (150,125)  center(162.5,137.5)  ✓
+                    g7: (150, 25)  center(162.5, 37.5)  ✓
+                    h4: (175,100)  center(187.5,112.5)  ✓
+                    h6: (175, 50)  center(187.5, 62.5)  ✓
+
+                    6 di sisi kanan → cukup untuk ilustrasi
+                    Kita tunjukkan semua 8, highlight yang di kanan lebih terang
+                -->
+
+                <!-- Tujuan f5 yang ada di sisi kanan (≥100) -->
+                <rect x="100" y="125" width="25" height="25" fill="#16a34a" fill-opacity="0.45"/>
+                <rect x="100" y="25"  width="25" height="25" fill="#16a34a" fill-opacity="0.45"/>
+                <rect x="150" y="125" width="25" height="25" fill="#16a34a" fill-opacity="0.45"/>
+                <rect x="150" y="25"  width="25" height="25" fill="#16a34a" fill-opacity="0.45"/>
+                <rect x="175" y="100" width="25" height="25" fill="#16a34a" fill-opacity="0.45"/>
+                <rect x="175" y="50"  width="25" height="25" fill="#16a34a" fill-opacity="0.45"/>
+                <!-- Tujuan yang melewati garis tengah (sedikit transparan) -->
+                <rect x="75"  y="100" width="25" height="25" fill="#16a34a" fill-opacity="0.20"/>
+                <rect x="75"  y="50"  width="25" height="25" fill="#16a34a" fill-opacity="0.20"/>
+
+                <!-- Titik tujuan kanan -->
+                <circle cx="112.5" cy="137.5" r="5" fill="#D3D3D3" fill-opacity="0.90"/>
+                <circle cx="112.5" cy="37.5"  r="5" fill="#D3D3D3" fill-opacity="0.90"/>
+                <circle cx="162.5" cy="137.5" r="5" fill="#D3D3D3" fill-opacity="0.90"/>
+                <circle cx="162.5" cy="37.5"  r="5" fill="#D3D3D3" fill-opacity="0.90"/>
+                <circle cx="187.5" cy="112.5" r="5" fill="#D3D3D3" fill-opacity="0.90"/>
+                <circle cx="187.5" cy="62.5"  r="5" fill="#D3D3D3" fill-opacity="0.90"/>
+                <!-- Titik tujuan yang melewati garis tengah -->
+                <circle cx="87.5"  cy="112.5" r="5" fill="#D3D3D3" fill-opacity="0.40"/>
+                <circle cx="87.5"  cy="62.5"  r="5" fill="#D3D3D3" fill-opacity="0.40"/>
+
+                <!-- Kuda putih di f5 -->
+                <text x="137.5" y="87.5" font-size="20" fill="white"
+                      text-anchor="middle" dominant-baseline="central">♘</text>
+
+                <!-- Label "8 kotak" -->
+                <rect x="110" y="108" width="44" height="8" rx="2" fill="#16a34a" fill-opacity="0.82"/>
+                <text x="132" y="112.5" font-size="4.5" fill="white"
+                      text-anchor="middle" dominant-baseline="central" font-weight="bold">Hingga 8 kotak tujuan</text>
+
+                <!-- Koordinat -->
+                <text x="12.5"  y="209" font-size="5.5" fill="#374151" text-anchor="middle" font-weight="bold">a1 ♘</text>
+                <text x="137.5" y="209" font-size="5.5" fill="#374151" text-anchor="middle" font-weight="bold">f5 ♘</text>
+                <text x="100"   y="219" font-size="7.5" fill="#374151" text-anchor="middle" font-weight="bold">♘ POJOK vs TENGAH — Pengaruh Posisi</text>
+            </svg>
+
+            <div style="display:flex;gap:8px;margin-top:4px;justify-content:center;flex-wrap:wrap;">
+                <span style="display:flex;align-items:center;gap:3px;font-size:7.5px;color:#555;">
+                    <span style="width:8px;height:8px;background:#ef4444;border-radius:2px;display:inline-block;opacity:.7"></span>
+                    Pojok (a1): hanya 2 kotak
+                </span>
+                <span style="display:flex;align-items:center;gap:3px;font-size:7.5px;color:#555;">
+                    <span style="width:8px;height:8px;background:#16a34a;border-radius:2px;display:inline-block;opacity:.7"></span>
+                    Tengah (f5): hingga 8 kotak
+                </span>
+            </div>
+        </div>
+
+        <div class="text-content">
+            <h3 class="text-xl font-extrabold text-chess-green uppercase mb-3 leading-tight">Posisi Menentukan Kekuatan Kuda</h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+                Tidak ada bidak lain dalam catur yang nilai praktisnya berubah sedrastis kuda tergantung di mana ia ditempatkan. Diagram di samping memperlihatkan perbedaan itu secara langsung. Kuda di pojok <strong>a1</strong> hanya memiliki dua kotak tujuan yang valid — bidak yang secara teoritis bernilai tiga poin tetapi kekuatan nyatanya jauh di bawah itu. Sementara kuda di <strong>f5</strong>, di dekat pusat papan, dapat menjangkau hingga delapan kotak sekaligus.
+                <br><br>
+                Perbedaan ini bukan sekadar soal jumlah. Kuda yang berada di tengah papan mengontrol lebih banyak petak penting, lebih sulit diusir oleh pion lawan, dan lebih mudah menjangkau semua sektor papan tanpa perlu banyak langkah tambahan. Kuda di tepi membutuhkan beberapa langkah hanya untuk bisa kembali aktif, dan dalam permainan yang bergerak cepat, langkah yang terbuang untuk reposisi adalah tempo yang sangat mahal.
+                <br><br>
+                Karena itu, ada ungkapan klasik dalam catur yang berbunyi: <em>"A knight on the rim is dim"</em> — kuda di tepi papan redup cahayanya. Prinsip ini bukan sekadar aksioma, tetapi mencerminkan matematika geometri papan yang memang tidak berpihak pada kuda yang terpinggirkan.
+                <br><br>
+                Dalam praktiknya, salah satu tujuan paling konsisten dalam pengembangan kuda adalah membawanya ke petak tengah yang kuat, terutama yang tidak mudah diserang oleh pion lawan. Kuda yang telah menduduki petak seperti itu — biasanya di e5, d5, f5, atau petak setara — sering kali menjadi bidak yang paling dominan di papan dan sangat sulit diusir tanpa membayar kerugian posisi yang berarti.
+            </p>
+        </div>
+    </div>
+
+<!-- ============================================ -->
+<!-- SUB-SECTION: KEMAMPUAN MELOMPAT              -->
+<!-- ============================================ -->
+<div class="content-row" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px dashed #e5e7eb;">
+    <div class="board-panel relative" style="float: left; margin-right: 1.5rem; margin-bottom: 1rem;">
+        <svg viewBox="0 0 200 230" class="w-full h-full">
+            <!-- Papan 8×8 -->
+            <rect width="200" height="200" fill="#769656"/>
+            <g fill="#eeeed2">
+                <rect x="0"   y="175" width="25" height="25"/><rect x="50"  y="175" width="25" height="25"/>
+                <rect x="100" y="175" width="25" height="25"/><rect x="150" y="175" width="25" height="25"/>
+                <rect x="25"  y="150" width="25" height="25"/><rect x="75"  y="150" width="25" height="25"/>
+                <rect x="125" y="150" width="25" height="25"/><rect x="175" y="150" width="25" height="25"/>
+                <rect x="0"   y="125" width="25" height="25"/><rect x="50"  y="125" width="25" height="25"/>
+                <rect x="100" y="125" width="25" height="25"/><rect x="150" y="125" width="25" height="25"/>
+                <rect x="25"  y="100" width="25" height="25"/><rect x="75"  y="100" width="25" height="25"/>
+                <rect x="125" y="100" width="25" height="25"/><rect x="175" y="100" width="25" height="25"/>
+                <rect x="0"   y="75"  width="25" height="25"/><rect x="50"  y="75"  width="25" height="25"/>
+                <rect x="100" y="75"  width="25" height="25"/><rect x="150" y="75"  width="25" height="25"/>
+                <rect x="25"  y="50"  width="25" height="25"/><rect x="75"  y="50"  width="25" height="25"/>
+                <rect x="125" y="50"  width="25" height="25"/><rect x="175" y="50"  width="25" height="25"/>
+                <rect x="0"   y="25"  width="25" height="25"/><rect x="50"  y="25"  width="25" height="25"/>
+                <rect x="100" y="25"  width="25" height="25"/><rect x="150" y="25"  width="25" height="25"/>
+                <rect x="25"  y="0"   width="25" height="25"/><rect x="75"  y="0"   width="25" height="25"/>
+                <rect x="125" y="0"   width="25" height="25"/><rect x="175" y="0"   width="25" height="25"/>
+            </g>
+
+            <defs>
+                <marker id="arr-jump-l" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                    <path d="M0,0 L6,3 L0,6 Z" fill="#7c3aed"/></marker>
+                <marker id="arr-jump-r" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                    <path d="M0,0 L6,3 L0,6 Z" fill="#7c3aed"/></marker>
+            </defs>
+
+            <!--
+                Posisi awal standar baris 1 putih:
+                a1=♖  b1=♘  c1=♗  d1=♕  e1=♔  f1=♗  g1=♘  h1=♖
+
+                Kuda yang ditampilkan aktif: b1 (37.5, 187.5)
+                Tujuan L-move dari b1:
+                  a3 (12.5, 137.5) — 1 kiri 2 atas ✓
+                  c3 (62.5, 137.5) — 1 kanan 2 atas ✓
+                  d2 (87.5, 162.5) — 2 kanan 1 atas → ditempati pion kawan, skip
+
+                Kuda melompati pion baris 2 untuk mencapai a3 / c3
+            -->
+
+            <!-- Baris 2: pion putih (penghalang yang dilompati) -->
+            <text x="12.5"  y="162.5" font-size="17" fill="white" text-anchor="middle" dominant-baseline="central" opacity="0.55">♙</text>
+            <text x="37.5"  y="162.5" font-size="17" fill="white" text-anchor="middle" dominant-baseline="central" opacity="0.55">♙</text>
+            <text x="62.5"  y="162.5" font-size="17" fill="white" text-anchor="middle" dominant-baseline="central" opacity="0.55">♙</text>
+            <text x="87.5"  y="162.5" font-size="17" fill="white" text-anchor="middle" dominant-baseline="central" opacity="0.55">♙</text>
+            <text x="112.5" y="162.5" font-size="17" fill="white" text-anchor="middle" dominant-baseline="central" opacity="0.55">♙</text>
+            <text x="137.5" y="162.5" font-size="17" fill="white" text-anchor="middle" dominant-baseline="central" opacity="0.55">♙</text>
+            <text x="162.5" y="162.5" font-size="17" fill="white" text-anchor="middle" dominant-baseline="central" opacity="0.55">♙</text>
+            <text x="187.5" y="162.5" font-size="17" fill="white" text-anchor="middle" dominant-baseline="central" opacity="0.55">♙</text>
+
+            <!--
+                Baris 1: perwira putih (posisi awal benar)
+                a1=♖  b1=♘(aktif)  c1=♗  d1=♕  e1=♔  f1=♗  g1=♘  h1=♖
+            -->
+            <text x="12.5"  y="187.5" font-size="17" fill="white" text-anchor="middle" dominant-baseline="central" opacity="0.55">♖</text>
+            <!-- b1 = kuda aktif, digambar terpisah di bawah -->
+            <text x="62.5"  y="187.5" font-size="17" fill="white" text-anchor="middle" dominant-baseline="central" opacity="0.55">♗</text>
+            <text x="87.5"  y="187.5" font-size="17" fill="white" text-anchor="middle" dominant-baseline="central" opacity="0.55">♕</text>
+            <text x="112.5" y="187.5" font-size="17" fill="white" text-anchor="middle" dominant-baseline="central" opacity="0.55">♔</text>
+            <text x="137.5" y="187.5" font-size="17" fill="white" text-anchor="middle" dominant-baseline="central" opacity="0.55">♗</text>
+            <text x="162.5" y="187.5" font-size="17" fill="white" text-anchor="middle" dominant-baseline="central" opacity="0.55">♘</text>
+            <text x="187.5" y="187.5" font-size="17" fill="white" text-anchor="middle" dominant-baseline="central" opacity="0.55">♖</text>
+
+            <!-- Highlight petak tujuan a3 dan c3 -->
+            <rect x="0"  y="125" width="25" height="25" fill="#7c3aed" fill-opacity="0.35"/>
+            <rect x="50" y="125" width="25" height="25" fill="#7c3aed" fill-opacity="0.35"/>
+
+            <!-- Titik tujuan -->
+           
+           <text x="12.5" y="137.5" font-size="20" fill="white" text-anchor="middle" dominant-baseline="central">♘</text>
+           <text x="62.5" y="137.5" font-size="20" fill="white" text-anchor="middle" dominant-baseline="central">♘</text>
+
+            <!--
+                PANAH LOMPATAN KUDA b1 (37.5,187.5):
+                Ke a3 (12.5,137.5) — kurva melengkung ke kiri atas
+                Ke c3 (62.5,137.5) — kurva melengkung ke kanan atas
+            -->
+
+            <!-- Panah kiri: b1 → a3 -->
+            <path d="M 37.5,180 C 25,148 14,148 12.5,142"
+                  stroke="#7c3aed" stroke-width="2.5" fill="none"
+                  stroke-dasharray="4,3" stroke-linecap="round"
+                  marker-end="url(#arr-jump-l)"/>
+
+            <!-- Panah kanan: b1 → c3 -->
+            <path d="M 37.5,180 C 50,148 60,148 62.5,142"
+                  stroke="#7c3aed" stroke-width="2.5" fill="none"
+                  stroke-dasharray="4,3" stroke-linecap="round"
+                  marker-end="url(#arr-jump-r)"/>
+
+            <!-- Highlight lingkaran posisi kuda b1 -->
+            <circle cx="37.5" cy="187.5" r="11" fill="#7c3aed" fill-opacity="0.18"/>
+
+            <!-- Kuda putih b1 (bidak aktif) -->
+            <text x="37.5" y="187.5" font-size="20" fill="white"
+                  text-anchor="middle" dominant-baseline="central">♘</text>
+
+            <!-- Badge -->
+            <rect x="18" y="150" width="50" height="8" rx="3" fill="#7c3aed" fill-opacity="0.90"/>
+            <text x="43" y="154.5" font-size="4.5" fill="white"
+                  text-anchor="middle" dominant-baseline="central"
+                  font-weight="bold">Melompati pion!</text>
+
+            <!-- Koordinat kolom -->
+            <text x="12.5"  y="212" font-size="5.5" fill="#374151" text-anchor="middle" font-weight="bold">a</text>
+            <text x="37.5"  y="212" font-size="5.5" fill="#374151" text-anchor="middle" font-weight="bold">b</text>
+            <text x="62.5"  y="212" font-size="5.5" fill="#374151" text-anchor="middle" font-weight="bold">c</text>
+
+            <!-- Footer -->
+            <rect x="10" y="218" width="180" height="10" rx="3" fill="#7c3aed" fill-opacity="0.92"/>
+            <text x="100" y="224" font-size="6.5" fill="white"
+                  text-anchor="middle" dominant-baseline="central"
+                  font-weight="bold">♘ KUDA b1 MELOMPATI BARISAN PION</text>
+        </svg>
+
+        <div style="display:flex;gap:8px;margin-top:6px;justify-content:center;flex-wrap:wrap;">
+            <span style="display:flex;align-items:center;gap:4px;font-size:7.5px;color:#555;">
+                <span style="width:8px;height:8px;background:#7c3aed;border-radius:50%;display:inline-block;opacity:.8"></span>
+                Loncatan kuda b1 → a3 / c3
+            </span>
+        </div>
+    </div>
+
+    <div class="text-content">
+        <h3 class="text-xl font-extrabold text-chess-green uppercase mb-3 leading-tight">Kemampuan Unik: Melompati Bidak Lain</h3>
+        <p class="text-gray-600 leading-relaxed text-sm">
+            Diagram di samping menggambarkan salah satu momen paling khas dalam pembukaan catur. Papan masih penuh sesak dengan pion dan bidak yang belum bergerak, tetapi kuda di <strong>b1</strong> sudah bisa melompat ke <strong>a3</strong> atau <strong>c3</strong> tanpa terganggu oleh apapun yang berdiri di jalurnya. Pion di a2, b2, c2, dan bidak-bidak di sekelilingnya sama sekali tidak menghalangi gerakan kuda.
+            <br><br>
+            Inilah yang membuat kuda menjadi bidak yang sangat berharga di fase pembukaan. Ketika gajah masih terblok oleh pion sendiri, benteng belum memiliki kolom terbuka, dan ratu belum aman untuk dikeluarkan, kuda sudah bisa aktif dan menempati petak strategis sejak langkah pertama. Ia tidak perlu menunggu jalur dibersihkan karena ia tidak membutuhkan jalur sama sekali.
+            <br><br>
+            Kemampuan ini juga menjadikan serangan kuda sangat sulit diantisipasi, terutama bagi pemain yang kurang berpengalaman. Sebuah kuda yang terlihat terblok secara visual bisa tiba-tiba muncul di petak yang mengejutkan karena ia bergerak bukan melalui garis lurus, melainkan melalui lompatan. Bidak yang tampak "aman" karena dikelilingi banyak kawan bisa tetap menjadi target valid kuda dari arah yang tidak terduga.
+            <br><br>
+            <span class="bg-amber-50 border border-amber-200 px-2 py-1 rounded text-xs inline-block mt-1">
+                ⚠️ <strong>Perlu diingat:</strong> Meski kuda bisa melompati bidak di tengah jalur, ia tetap tidak boleh mendarat di petak yang sudah ditempati bidak sendiri. Ia hanya bisa menangkap bidak lawan yang berada di petak tujuan akhirnya.
+            </span>
+        </p>
+    </div>
+</div>
+</div>
 
             <!-- Section 3 -->
-            <div class="section-block">
-                <div class="flex items-center gap-4 mb-4">
-                    <span class="section-number text-3xl">3</span>
-                    <h3 class="text-2xl font-extrabold text-chess-green uppercase leading-tight">♗ GAJAH (Bishop)</h3>
-                </div>
-                <p class="text-gray-600 mb-6 leading-snug">Gajah adalah bidak catur yang bergerak secara diagonal dan memiliki jangkauan panjang. Pelajari aturan gerakan gajah, cara makan, dan mengapa sepasang gajah sangat kuat dalam permainan catur.</p>
-                <div class="content-row">
-                <div class="board-panel relative" style="float: right; margin-left: 1.5rem; margin-bottom: 1rem;">
-                    <svg viewBox="0 0 200 200" class="w-full h-full">
-                        <rect width="200" height="200" fill="#769656"/>
-                        <g fill="#eeeed2"><rect width="25" height="25" x="0" y="0"/><rect width="25" height="25" x="50" y="0"/><rect width="25" height="25" x="100" y="0"/><rect width="25" height="25" x="150" y="0"/><rect width="25" height="25" x="25" y="25"/><rect width="25" height="25" x="75" y="25"/><rect width="25" height="25" x="125" y="25"/><rect width="25" height="25" x="175" y="25"/><rect width="25" height="25" x="0" y="50"/><rect width="25" height="25" x="50" y="50"/><rect width="25" height="25" x="100" y="50"/><rect width="25" height="25" x="150" y="50"/><rect width="25" height="25" x="25" y="75"/><rect width="25" height="25" x="75" y="75"/><rect width="25" height="25" x="125" y="75"/><rect width="25" height="25" x="175" y="75"/><rect width="25" height="25" x="0" y="100"/><rect width="25" height="25" x="50" y="100"/><rect width="25" height="25" x="100" y="100"/><rect width="25" height="25" x="150" y="100"/><rect width="25" height="25" x="25" y="125"/><rect width="25" height="25" x="75" y="125"/><rect width="25" height="25" x="125" y="125"/><rect width="25" height="25" x="175" y="125"/><rect width="25" height="25" x="0" y="150"/><rect width="25" height="25" x="50" y="150"/><rect width="25" height="25" x="100" y="150"/><rect width="25" height="25" x="150" y="150"/><rect width="25" height="25" x="25" y="175"/><rect width="25" height="25" x="75" y="175"/><rect width="25" height="25" x="125" y="175"/><rect width="25" height="25" x="175" y="175"/></g>
-                        <rect x="100" y="75" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
-                        <rect x="125" y="50" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
-                        <rect x="150" y="25" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
-                        <rect x="175" y="0" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
-                        <rect x="50" y="125" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
-                        <rect x="25" y="150" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
-                        <rect x="0" y="175" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
-                        <rect x="100" y="125" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
-                        <rect x="125" y="150" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
-                        <rect x="150" y="175" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
-                        <rect x="50" y="75" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
-                        <rect x="25" y="50" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
-                        <rect x="0" y="25" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
-                        <text x="87.5" y="112.5" font-size="20" fill="white" text-anchor="middle" dominant-baseline="central">♗</text>
-                    </svg>
-                </div>
-                    <div class="text-content">
-                        <h3 class="text-xl font-extrabold text-chess-green uppercase mb-3 leading-tight">Nilai: 3 poin</h3>
-                        <p class="text-gray-600 leading-relaxed text-sm"><strong>Gajah adalah bidak catur dengan nilai 3 poin</strong> yang bergerak secara diagonal sepanjang garis miring. Bidak ini dapat melangkah sejauh mungkin ke arah diagonal selama jalurnya tidak terhalang oleh bidak lain. Karena jangkauan geraknya panjang, gajah sangat efektif untuk mengontrol papan dari jarak jauh.  <br><br>Berbeda dengan kuda, gajah tidak dapat melompati bidak lain. Jika ada bidak yang menghalangi jalur diagonalnya, maka gajah harus berhenti sebelum bidak tersebut atau menangkapnya jika itu adalah bidak lawan yang berada tepat di jalurnya.  <br><br>Salah satu ciri khas gajah adalah ia selalu berada pada warna kotak yang sama sepanjang permainan. Gajah yang memulai dari kotak putih hanya akan bergerak di kotak putih, sedangkan gajah yang memulai dari kotak hitam hanya akan bergerak di kotak hitam. Karena itulah setiap pemain memiliki dua gajah yang saling melengkapi, satu untuk mengontrol kotak putih dan satu untuk mengontrol kotak hitam.  <br><br>Dalam permainan catur, sepasang gajah sering dianggap sangat kuat, terutama jika papan dalam keadaan terbuka. Dengan dua gajah aktif, pemain dapat mengontrol kedua warna kotak dan memberikan tekanan besar ke berbagai sisi papan. Itulah sebabnya sepasang gajah menjadi keuntungan strategis yang penting.  <br><br>Memahami cara gerak gajah akan membantu pemain memaksimalkan kekuatan serangan jarak jauh dan membangun kontrol posisi yang lebih luas di papan catur.</p>
-                    </div>
-                </div>
+<div class="section-block">
+    <div class="flex items-center gap-4 mb-4">
+        <span class="section-number text-3xl">3</span>
+        <h3 class="text-2xl font-extrabold text-chess-green uppercase leading-tight">♗ GAJAH (Bishop)</h3>
+    </div>
+    <p class="text-gray-600 mb-6 leading-snug">Gajah adalah bidak catur yang bergerak secara diagonal dan memiliki jangkauan panjang. Pelajari aturan gerakan gajah, cara makan, dan mengapa sepasang gajah sangat kuat dalam permainan catur.</p>
+
+    <!-- ============================================ -->
+    <!-- GERAKAN DASAR GAJAH                         -->
+    <!-- ============================================ -->
+    <div class="content-row">
+        <div class="board-panel relative" style="float: right; margin-left: 1.5rem; margin-bottom: 1rem;">
+            <svg viewBox="0 0 200 220" class="w-full h-full">
+                <!-- Papan 8×8 -->
+                <rect width="200" height="200" fill="#769656"/>
+                <g fill="#eeeed2">
+                    <rect x="0"   y="0"   width="25" height="25"/><rect x="50"  y="0"   width="25" height="25"/>
+                    <rect x="100" y="0"   width="25" height="25"/><rect x="150" y="0"   width="25" height="25"/>
+                    <rect x="25"  y="25"  width="25" height="25"/><rect x="75"  y="25"  width="25" height="25"/>
+                    <rect x="125" y="25"  width="25" height="25"/><rect x="175" y="25"  width="25" height="25"/>
+                    <rect x="0"   y="50"  width="25" height="25"/><rect x="50"  y="50"  width="25" height="25"/>
+                    <rect x="100" y="50"  width="25" height="25"/><rect x="150" y="50"  width="25" height="25"/>
+                    <rect x="25"  y="75"  width="25" height="25"/><rect x="75"  y="75"  width="25" height="25"/>
+                    <rect x="125" y="75"  width="25" height="25"/><rect x="175" y="75"  width="25" height="25"/>
+                    <rect x="0"   y="100" width="25" height="25"/><rect x="50"  y="100" width="25" height="25"/>
+                    <rect x="100" y="100" width="25" height="25"/><rect x="150" y="100" width="25" height="25"/>
+                    <rect x="25"  y="125" width="25" height="25"/><rect x="75"  y="125" width="25" height="25"/>
+                    <rect x="125" y="125" width="25" height="25"/><rect x="175" y="125" width="25" height="25"/>
+                    <rect x="0"   y="150" width="25" height="25"/><rect x="50"  y="150" width="25" height="25"/>
+                    <rect x="100" y="150" width="25" height="25"/><rect x="150" y="150" width="25" height="25"/>
+                    <rect x="25"  y="175" width="25" height="25"/><rect x="75"  y="175" width="25" height="25"/>
+                    <rect x="125" y="175" width="25" height="25"/><rect x="175" y="175" width="25" height="25"/>
+                </g>
+
+                <!--
+                    Gajah putih di d4 (87.5, 112.5)
+                    4 garis diagonal:
+                    Kanan-atas: e5(112.5,87.5) f6(137.5,62.5) g7(162.5,37.5) h8(187.5,12.5)
+                    Kiri-atas:  c5(62.5,87.5)  b6(37.5,62.5)  a7(12.5,37.5)
+                    Kanan-bawah: e3(112.5,137.5) f2(137.5,162.5) g1(162.5,187.5)
+                    Kiri-bawah:  c3(62.5,137.5) b2(37.5,162.5)  a1(12.5,187.5)
+                -->
+
+                <!-- Diagonal kanan-atas -->
+                <rect x="100" y="75"  width="25" height="25" fill="#facc15" fill-opacity="0.50"/>
+                <rect x="125" y="50"  width="25" height="25" fill="#facc15" fill-opacity="0.50"/>
+                <rect x="150" y="25"  width="25" height="25" fill="#facc15" fill-opacity="0.50"/>
+                <rect x="175" y="0"   width="25" height="25" fill="#facc15" fill-opacity="0.50"/>
+
+                <!-- Diagonal kiri-atas -->
+                <rect x="50"  y="75"  width="25" height="25" fill="#facc15" fill-opacity="0.50"/>
+                <rect x="25"  y="50"  width="25" height="25" fill="#facc15" fill-opacity="0.50"/>
+                <rect x="0"   y="25"  width="25" height="25" fill="#facc15" fill-opacity="0.50"/>
+
+                <!-- Diagonal kanan-bawah -->
+                <rect x="100" y="125" width="25" height="25" fill="#facc15" fill-opacity="0.50"/>
+                <rect x="125" y="150" width="25" height="25" fill="#facc15" fill-opacity="0.50"/>
+                <rect x="150" y="175" width="25" height="25" fill="#facc15" fill-opacity="0.50"/>
+
+                <!-- Diagonal kiri-bawah -->
+                <rect x="50"  y="125" width="25" height="25" fill="#facc15" fill-opacity="0.50"/>
+                <rect x="25"  y="150" width="25" height="25" fill="#facc15" fill-opacity="0.50"/>
+                <rect x="0"   y="175" width="25" height="25" fill="#facc15" fill-opacity="0.50"/>
+
+                <!-- Gajah putih di d4 -->
+                <text x="87.5" y="112.5" font-size="22" fill="white"
+                      text-anchor="middle" dominant-baseline="central">♗</text>
+
+                <!-- Label judul -->
+                <text x="100" y="10" font-size="7" fill="white"
+                      text-anchor="middle" font-weight="bold" opacity="0.90">GERAKAN GAJAH — 4 DIAGONAL</text>
+
+                <!-- Koordinat -->
+                <text x="87.5" y="209" font-size="5.5" fill="#374151" text-anchor="middle" font-weight="bold">d4</text>
+                <text x="100"  y="219" font-size="7.5" fill="#374151" text-anchor="middle" font-weight="bold">♗ GAJAH — Bergerak Diagonal Tanpa Batas</text>
+            </svg>
+
+            <div style="display:flex;gap:8px;margin-top:4px;justify-content:center;flex-wrap:wrap;">
+                <span style="display:flex;align-items:center;gap:3px;font-size:7.5px;color:#555;">
+                    <span style="width:8px;height:8px;background:#facc15;border-radius:2px;display:inline-block;opacity:.8"></span>
+                    Jangkauan diagonal (4 arah, tanpa batas jarak)
+                </span>
             </div>
+        </div>
+
+        <div class="text-content">
+            <h3 class="text-xl font-extrabold text-chess-green uppercase mb-3 leading-tight">Nilai: 3 Poin</h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+                Gajah adalah bidak dengan nilai 3 poin yang bergerak secara diagonal — empat arah miring sekaligus, dengan jangkauan sejauh yang ia mau selama tidak ada bidak yang menghalangi jalurnya. Dari posisi di tengah papan seperti <strong>d4</strong>, gajah bisa menjangkau hingga 13 petak sekaligus, menjadikannya salah satu bidak paling efisien untuk mengontrol ruang dari kejauhan.
+                <br><br>
+                Berbeda dari kuda, gajah tidak bisa melompati bidak lain. Jika ada bidak — kawan maupun lawan — yang berdiri di jalur diagonalnya, gajah harus berhenti sebelum bidak tersebut. Ia hanya bisa menangkap jika bidak penghalang itu adalah milik lawan, dan proses menangkapnya menghentikan gajah di petak itu. Karena sifat ini, gajah sangat bergantung pada struktur pion: dalam posisi tertutup di mana banyak pion saling mengunci, gajah bisa sangat terbatas. Namun di posisi terbuka, ia menjadi sangat dominan.
+                <br><br>
+                Satu ciri khas gajah yang paling penting untuk dipahami adalah bahwa ia terikat pada satu warna kotak sepanjang permainan. Gajah yang dimulai dari kotak putih tidak akan pernah bisa menapaki kotak hitam, dan sebaliknya. Inilah mengapa setiap pemain memulai permainan dengan dua gajah yang saling melengkapi — satu untuk kotak terang, satu untuk kotak gelap — dan kehilangan salah satu berarti kehilangan kontrol terhadap separuh warna papan secara permanen.
+            </p>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SUB-SECTION: SEPASANG GAJAH (BISHOP PAIR)   -->
+    <!-- ============================================ -->
+    <div class="content-row" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px dashed #e5e7eb;">
+        <div class="board-panel relative" style="float: left; margin-right: 1.5rem; margin-bottom: 1rem;">
+            <svg viewBox="0 0 200 220" class="w-full h-full">
+                <!-- Papan 8×8 -->
+                <rect width="200" height="200" fill="#769656"/>
+                <g fill="#eeeed2">
+                    <rect x="0"   y="0"   width="25" height="25"/><rect x="50"  y="0"   width="25" height="25"/>
+                    <rect x="100" y="0"   width="25" height="25"/><rect x="150" y="0"   width="25" height="25"/>
+                    <rect x="25"  y="25"  width="25" height="25"/><rect x="75"  y="25"  width="25" height="25"/>
+                    <rect x="125" y="25"  width="25" height="25"/><rect x="175" y="25"  width="25" height="25"/>
+                    <rect x="0"   y="50"  width="25" height="25"/><rect x="50"  y="50"  width="25" height="25"/>
+                    <rect x="100" y="50"  width="25" height="25"/><rect x="150" y="50"  width="25" height="25"/>
+                    <rect x="25"  y="75"  width="25" height="25"/><rect x="75"  y="75"  width="25" height="25"/>
+                    <rect x="125" y="75"  width="25" height="25"/><rect x="175" y="75"  width="25" height="25"/>
+                    <rect x="0"   y="100" width="25" height="25"/><rect x="50"  y="100" width="25" height="25"/>
+                    <rect x="100" y="100" width="25" height="25"/><rect x="150" y="100" width="25" height="25"/>
+                    <rect x="25"  y="125" width="25" height="25"/><rect x="75"  y="125" width="25" height="25"/>
+                    <rect x="125" y="125" width="25" height="25"/><rect x="175" y="125" width="25" height="25"/>
+                    <rect x="0"   y="150" width="25" height="25"/><rect x="50"  y="150" width="25" height="25"/>
+                    <rect x="100" y="150" width="25" height="25"/><rect x="150" y="150" width="25" height="25"/>
+                    <rect x="25"  y="175" width="25" height="25"/><rect x="75"  y="175" width="25" height="25"/>
+                    <rect x="125" y="175" width="25" height="25"/><rect x="175" y="175" width="25" height="25"/>
+                </g>
+
+                <!--
+                    BISHOP PAIR:
+                    Gajah kotak terang di d5 (87.5, 87.5) — berdiri di kotak gelap
+                    Gajah kotak gelap di e4 (112.5, 112.5) — berdiri di kotak terang
+                    
+                    Wait: d5 pada papan SVG kita:
+                    d = kolom ke-4 = x=75, rank 5 = y=75 → d5 = (75,75) center (87.5,87.5)
+                    Petak d5: x=75,y=75 → (75+75)/25 = kolom 3 + baris 3 = 6 (genap) → kotak terang
+                    
+                    Gajah "kotak terang" harus berdiri di kotak terang dan hanya menjelajah kotak terang
+                    Gajah "kotak gelap" harus berdiri di kotak gelap dan hanya menjelajah kotak gelap
+                    
+                    d5 = kotak terang → gajah kotak terang ✓
+                    e4 = x=100,y=100 → (100+100)/25 = 4+4 = 8 (genap) → kotak terang juga ✗
+                    
+                    Let me recalculate:
+                    Kotak terang di SVG kita = kotak dengan fill #eeeed2
+                    Pattern: kotak (col,row) dimana col+row genap = terang
+                    col = x/25, row = y/25
+                    
+                    d5: x=75, y=75 → col=3, row=3 → 3+3=6 genap → TERANG ✓
+                    e4: x=100,y=100 → col=4, row=4 → 4+4=8 genap → TERANG ✗ (sama!)
+                    
+                    Untuk bishop pair, saya butuh satu di kotak terang, satu di kotak gelap:
+                    c4: x=50, y=100 → col=2, row=4 → 2+4=6 genap → TERANG
+                    d4: x=75, y=100 → col=3, row=4 → 3+4=7 ganjil → GELAP ✓
+                    
+                    Jadi: gajah terang di d5 (87.5, 87.5)
+                          gajah gelap di e4 (112.5, 112.5)? → e4 terang, salah
+                          gajah gelap di d4 (87.5, 112.5) → gelap ✓
+                    
+                    Tapi kalau keduanya di kolom d, kurang visual menarik.
+                    
+                    Pakai: gajah terang di c5 (62.5, 87.5) → c5: col=2,row=3 → 5 ganjil → GELAP ✗
+                    
+                    c5: x=50, y=75 → col=2, row=3 → 2+3=5 ganjil → GELAP
+                    d5: x=75, y=75 → col=3, row=3 → 6 genap → TERANG
+                    e5: x=100,y=75 → col=4, row=3 → 7 ganjil → GELAP
+                    f5: x=125,y=75 → col=5, row=3 → 8 genap → TERANG
+                    
+                    Pakai:
+                    Gajah kotak TERANG di d5 (87.5, 87.5) → kotak terang ✓
+                    Gajah kotak GELAP di e4 → salah
+                    Gajah kotak GELAP di c4 → c4: x=50,y=100 → col=2,row=4 → 6 genap → TERANG ✗
+                    
+                    d4: col=3,row=4 → 7 ganjil → GELAP ✓
+                    e5: col=4,row=3 → 7 ganjil → GELAP ✓
+                    
+                    OK pakai:
+                    Gajah TERANG di d5 (87.5, 87.5) — kotak terang ✓
+                    Gajah GELAP di e4 ... no
+                    
+                    e5 → gelap ✓ tapi terlalu dekat d5
+                    
+                    Pakai jarak lebih jauh:
+                    Gajah TERANG di b3 (37.5, 137.5) → col=1,row=5 → 6 genap → TERANG ✓
+                    Gajah GELAP di f4 (137.5, 112.5) → col=5,row=4 → 9 ganjil → GELAP ✓
+                    
+                    OK! Sekarang highlight diagonal masing-masing:
+                    
+                    Gajah terang b3: diagonal terang saja
+                    Gajah gelap f4: diagonal gelap saja
+                    
+                    Dengan warna berbeda: biru untuk terang, oranye untuk gelap
+                -->
+
+                <!-- Diagonal gajah TERANG di b3 (37.5, 137.5) — warna biru -->
+                <!-- Kanan-atas: c4(62.5,112.5) d5(87.5,87.5) e6(112.5,62.5) f7(137.5,37.5) g8(162.5,12.5) -->
+                <rect x="50"  y="100" width="25" height="25" fill="#3b82f6" fill-opacity="0.30"/>
+                <rect x="75"  y="75"  width="25" height="25" fill="#3b82f6" fill-opacity="0.30"/>
+                <rect x="100" y="50"  width="25" height="25" fill="#3b82f6" fill-opacity="0.30"/>
+                <rect x="125" y="25"  width="25" height="25" fill="#3b82f6" fill-opacity="0.30"/>
+                <rect x="150" y="0"   width="25" height="25" fill="#3b82f6" fill-opacity="0.30"/>
+                <!-- Kiri-atas: a4(12.5,112.5) -->
+                <rect x="0"   y="100" width="25" height="25" fill="#3b82f6" fill-opacity="0.30"/>
+                <!-- Kanan-bawah: c2(62.5,162.5) d1(87.5,187.5) -->
+                <rect x="50"  y="150" width="25" height="25" fill="#3b82f6" fill-opacity="0.30"/>
+                <rect x="75"  y="175" width="25" height="25" fill="#3b82f6" fill-opacity="0.30"/>
+                <!-- Kiri-bawah: a1(12.5,187.5) -->
+                <rect x="0"   y="175" width="25" height="25" fill="#3b82f6" fill-opacity="0.30"/>
+
+                <!-- Diagonal gajah GELAP di f4 (137.5, 112.5) — warna oranye -->
+                <!-- Kanan-atas: g5(162.5,87.5) h6(187.5,62.5) -->
+                <rect x="150" y="75"  width="25" height="25" fill="#f97316" fill-opacity="0.30"/>
+                <rect x="175" y="50"  width="25" height="25" fill="#f97316" fill-opacity="0.30"/>
+                <!-- Kiri-atas: e5(112.5,87.5) d6(87.5,62.5) c7(62.5,37.5) b8(37.5,12.5) -->
+                <rect x="100" y="75"  width="25" height="25" fill="#f97316" fill-opacity="0.30"/>
+                <rect x="75"  y="50"  width="25" height="25" fill="#f97316" fill-opacity="0.30"/>
+                <rect x="50"  y="25"  width="25" height="25" fill="#f97316" fill-opacity="0.30"/>
+                <rect x="25"  y="0"   width="25" height="25" fill="#f97316" fill-opacity="0.30"/>
+                <!-- Kanan-bawah: g3(162.5,137.5) h2(187.5,162.5) -->
+                <rect x="150" y="125" width="25" height="25" fill="#f97316" fill-opacity="0.30"/>
+                <rect x="175" y="150" width="25" height="25" fill="#f97316" fill-opacity="0.30"/>
+                <!-- Kiri-bawah: e3(112.5,137.5) d2(87.5,162.5) c1(62.5,187.5) -->
+                <rect x="100" y="125" width="25" height="25" fill="#f97316" fill-opacity="0.30"/>
+                <rect x="75"  y="150" width="25" height="25" fill="#f97316" fill-opacity="0.30"/>
+                <rect x="50"  y="175" width="25" height="25" fill="#f97316" fill-opacity="0.30"/>
+
+                <!-- Gajah terang di b3 -->
+                <text x="37.5"  y="137.5" font-size="20" fill="white"
+                      text-anchor="middle" dominant-baseline="central">♗</text>
+                <!-- Gajah gelap di f4 -->
+                <text x="137.5" y="112.5" font-size="20" fill="white"
+                      text-anchor="middle" dominant-baseline="central">♗</text>
+
+                <!-- Label gajah -->
+                <rect x="15" y="118" width="44" height="8" rx="2" fill="#3b82f6" fill-opacity="0.88"/>
+                <text x="37" y="122.5" font-size="4.5" fill="white"
+                      text-anchor="middle" dominant-baseline="central" font-weight="bold">♗ Kotak terang</text>
+
+                <rect x="115" y="96" width="44" height="8" rx="2" fill="#f97316" fill-opacity="0.88"/>
+                <text x="137" y="100.5" font-size="4.5" fill="white"
+                      text-anchor="middle" dominant-baseline="central" font-weight="bold">♗ Kotak gelap</text>
+
+                <!-- Koordinat -->
+                <text x="37.5"  y="209" font-size="5.5" fill="#374151" text-anchor="middle" font-weight="bold">b3 ♗</text>
+                <text x="137.5" y="209" font-size="5.5" fill="#374151" text-anchor="middle" font-weight="bold">f4 ♗</text>
+                <text x="100"   y="219" font-size="7.5" fill="#374151" text-anchor="middle" font-weight="bold">♗♗ BISHOP PAIR — Kontrol Dua Warna</text>
+            </svg>
+
+            <div style="display:flex;gap:8px;margin-top:4px;justify-content:center;flex-wrap:wrap;">
+                <span style="display:flex;align-items:center;gap:3px;font-size:7.5px;color:#555;">
+                    <span style="width:8px;height:8px;background:#3b82f6;border-radius:2px;display:inline-block;opacity:.7"></span>
+                    Gajah kotak terang (b3)
+                </span>
+                <span style="display:flex;align-items:center;gap:3px;font-size:7.5px;color:#555;">
+                    <span style="width:8px;height:8px;background:#f97316;border-radius:2px;display:inline-block;opacity:.7"></span>
+                    Gajah kotak gelap (f4)
+                </span>
+            </div>
+        </div>
+
+        <div class="text-content">
+            <h3 class="text-xl font-extrabold text-chess-green uppercase mb-3 leading-tight">Sepasang Gajah — Bishop Pair</h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+                Karena setiap gajah terikat pada satu warna kotak sepanjang permainan, memiliki keduanya berarti menguasai seluruh papan secara diagonal. Diagram di samping memperlihatkan bagaimana dua gajah yang bekerja bersama saling melengkapi: gajah di <strong>b3</strong> menguasai diagonal kotak terang (biru), sementara gajah di <strong>f4</strong> menguasai diagonal kotak gelap (oranye). Tidak ada satu petak diagonal pun di papan yang luput dari jangkauan keduanya.
+                <br><br>
+                Inilah yang disebut <em>bishop pair</em> — sepasang gajah yang dimiliki satu pihak sementara lawan sudah kehilangan salah satu gajahnya. Keunggulan <em>bishop pair</em> adalah keunggulan jangka panjang yang nilainya meningkat seiring permainan berlanjut. Di middlegame yang terbuka dan terutama di endgame ketika pion semakin sedikit, dua gajah dapat mengontrol lebih banyak petak dari jarak jauh dibandingkan hampir semua kombinasi bidak minor lainnya.
+                <br><br>
+                Sebaliknya, gajah tunggal memiliki kelemahan struktural yang tidak bisa diatasi: ia tidak pernah bisa menyentuh separuh kotak di papan. Jika lawan menempatkan pion dan bidaknya di warna kotak yang tidak bisa dijangkau oleh gajah kita, maka gajah itu menjadi hampir tidak berguna meskipun masih berada di papan.
+                <br><br>
+                <span class="bg-blue-50 border border-blue-200 px-2 py-1 rounded text-xs inline-block mt-1">
+                    💡 <strong>Prinsip praktis:</strong> Jika kamu memiliki <em>bishop pair</em> dan lawan tidak, usahakan membuka posisi — tukarkan pion, bersihkan tengah papan. Semakin terbuka posisi, semakin dominan dua gajahmu dibandingkan bidak minor lawan.
+                </span>
+            </p>
+        </div>
+    </div>
+</div>
 
             <!-- Section 4 -->
             <div class="section-block">
@@ -4792,7 +5532,7 @@
             <div style="display:flex;gap:8px;margin-top:4px;justify-content:center;flex-wrap:wrap;">
                 <span style="display:flex;align-items:center;gap:3px;font-size:7.5px;color:#555;">
                     <span style="width:8px;height:8px;background:#7c3aed;border-radius:2px;display:inline-block;opacity:.7"></span>
-                    Skak 1: gajah b2 (diagonal, terbuka setelah c3 kosong)
+                    Skak 1: gajah b2 
                 </span>
                 <span style="display:flex;align-items:center;gap:3px;font-size:7.5px;color:#555;">
                     <span style="width:8px;height:8px;background:#ef4444;border-radius:2px;display:inline-block;opacity:.7"></span>
