@@ -1,0 +1,18 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<rect width="200" height="200" fill="#769656"/>
+<g fill="#eeeed2"><rect width="25" height="25" x="0" y="0"/><rect width="25" height="25" x="50" y="0"/><rect width="25" height="25" x="100" y="0"/><rect width="25" height="25" x="150" y="0"/><rect width="25" height="25" x="25" y="25"/><rect width="25" height="25" x="75" y="25"/><rect width="25" height="25" x="125" y="25"/><rect width="25" height="25" x="175" y="25"/><rect width="25" height="25" x="0" y="50"/><rect width="25" height="25" x="50" y="50"/><rect width="25" height="25" x="100" y="50"/><rect width="25" height="25" x="150" y="50"/><rect width="25" height="25" x="25" y="75"/><rect width="25" height="25" x="75" y="75"/><rect width="25" height="25" x="125" y="75"/><rect width="25" height="25" x="175" y="75"/><rect width="25" height="25" x="0" y="100"/><rect width="25" height="25" x="50" y="100"/><rect width="25" height="25" x="100" y="100"/><rect width="25" height="25" x="150" y="100"/><rect width="25" height="25" x="25" y="125"/><rect width="25" height="25" x="75" y="125"/><rect width="25" height="25" x="125" y="125"/><rect width="25" height="25" x="175" y="125"/><rect width="25" height="25" x="0" y="150"/><rect width="25" height="25" x="50" y="150"/><rect width="25" height="25" x="100" y="150"/><rect width="25" height="25" x="150" y="150"/><rect width="25" height="25" x="25" y="175"/><rect width="25" height="25" x="75" y="175"/><rect width="25" height="25" x="125" y="175"/><rect width="25" height="25" x="175" y="175"/></g>
+<rect x="100" y="75" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
+<rect x="125" y="50" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
+<rect x="150" y="25" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
+<rect x="175" y="0" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
+<rect x="50" y="125" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
+<rect x="25" y="150" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
+<rect x="0" y="175" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
+<rect x="100" y="125" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
+<rect x="125" y="150" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
+<rect x="150" y="175" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
+<rect x="50" y="75" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
+<rect x="25" y="50" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
+<rect x="0" y="25" width="25" height="25" fill="#facc15" fill-opacity="0.5"/>
+<text x="87.5" y="112.5" font-size="20" fill="white" text-anchor="middle" dominant-baseline="central">♗</text>
+</svg>
